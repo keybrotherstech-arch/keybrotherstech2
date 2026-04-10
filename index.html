@@ -1,0 +1,685 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KeyBrothers Tech. — Yazılım, Teknoloji & Dijital Dönüşüm</title>
+    <meta name="description" content="KeyBrothers Tech - SaaS, yapay zeka, otomasyon ve dijital ürün geliştirme. Güvenlik, ölçeklenebilirlik ve sürdürülebilirlik odaklı çözümler.">
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="KeyBrothers Tech. — Yazılım, Teknoloji & Dijital Dönüşüm">
+    <meta property="og:description" content="KeyBrothers Tech - SaaS, yapay zeka, otomasyon ve dijital ürün geliştirme. Güvenlik, ölçeklenebilirlik ve sürdürülebilirlik odaklı çözümler.">
+    <meta property="og:url" content="https://keybrotherstech.com/">
+    <meta property="og:image" content="https://keybrotherstech.com/favicon.svg">
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="KeyBrothers Tech. — Yazılım, Teknoloji & Dijital Dönüşüm">
+    <meta name="twitter:description" content="KeyBrothers Tech - SaaS, yapay zeka, otomasyon ve dijital ürün geliştirme.">
+    <meta name="twitter:image" content="https://keybrotherstech.com/favicon.svg">
+
+    <link rel="canonical" href="https://keybrotherstech.com/">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <link rel="manifest" href="site.webmanifest">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,500;1,600;1,700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="style.css">
+
+    <!-- Schema Markup -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Organization",
+        "name": "KeyBrothers Tech",
+        "url": "https://keybrotherstech.com/",
+        "logo": "https://keybrotherstech.com/favicon.svg",
+        "description": "Yazılım, yapay zeka ve dijital ürün geliştirme odaklı teknoloji ajansı.",
+        "contactPoint": {
+            "@type": "ContactPoint",
+            "telephone": "+90-544-379-0831",
+            "contactType": "customer service",
+            "email": "info@keybrotherstech.com",
+            "areaServed": "TR",
+            "availableLanguage": "Turkish"
+        },
+        "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "MTC PLAZA, Emek, Bişkek Cd. NO: 125-127 D:06490, DAİRE:16",
+            "addressLocality": "Çankaya",
+            "addressRegion": "Ankara",
+            "postalCode": "06490",
+            "addressCountry": "TR"
+        }
+    }
+    </script>
+</head>
+<body>
+
+    <!-- SCROLL PROGRESS -->
+    <div class="scroll-progress" id="scrollProgress"></div>
+
+    <!-- PRELOADER -->
+    <div id="preloader">
+        <div class="preloader-inner">
+            <div class="preloader-logo">
+                <img src="favicon.svg" alt="KeyBrothers Tech" width="48" height="48" class="preloader-logo-img">
+            </div>
+            <div class="preloader-text">
+                <span class="preloader-brand">KeyBrothers Tech.</span>
+                <span class="preloader-status">Sistem Başlatılıyor</span>
+            </div>
+            <div class="preloader-bar-wrap">
+                <div class="preloader-bar" id="preloaderBar"></div>
+            </div>
+            <div class="preloader-percent" id="preloaderPercent">0%</div>
+        </div>
+    </div>
+
+    <!-- NAVBAR -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-inner">
+            <a href="#hero" class="nav-logo">
+                <img src="favicon.svg" alt="KeyBrothers Tech" width="28" height="28" class="nav-logo-img">
+                <span>KeyBrothers <span class="nav-logo-muted">Tech.</span></span>
+            </a>
+            <div class="nav-links" id="navLinks">
+                <a href="hakkimizda.html" class="nav-link">Hakkımızda</a>
+                <a href="hizmetler.html" class="nav-link">Hizmetler</a>
+                <a href="cozumler.html" class="nav-link">Çözümler</a>
+                <a href="iletisim.html" class="nav-link">İletişim</a>
+            </div>
+            <div class="nav-actions">
+                <a href="iletisim.html" class="nav-cta">İletişime Geç</a>
+                <button class="nav-burger" id="navBurger" aria-label="Menüyü aç/kapat">
+                    <span></span><span></span><span></span>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- MOBILE MENU -->
+    <div class="mobile-menu" id="mobileMenu">
+        <div class="mobile-menu-inner">
+            <a href="hakkimizda.html" class="mobile-link">Hakkımızda</a>
+            <a href="hizmetler.html" class="mobile-link">Hizmetler</a>
+            <a href="cozumler.html" class="mobile-link">Çözümler</a>
+            <a href="iletisim.html" class="mobile-link">İletişim</a>
+            <a href="iletisim.html" class="mobile-cta">İletişime Geç</a>
+        </div>
+    </div>
+
+    <!-- HERO -->
+    <section class="hero" id="hero">
+        <video class="hero-video" autoplay muted loop playsinline aria-hidden="true">
+            <source src="assets/hero-bg.mp4" type="video/mp4">
+        </video>
+        <div class="hero-video-overlay"></div>
+        <div class="hero-glow hero-glow-1"></div>
+        <div class="hero-glow hero-glow-2"></div>
+        <div class="hero-grid-bg"></div>
+
+        <!-- Floating particles -->
+        <div class="hero-particles" aria-hidden="true">
+            <span class="particle" style="--x:8%;--y:25%;--dur:7s;--size:3px;--delay:0s"></span>
+            <span class="particle" style="--x:22%;--y:65%;--dur:9s;--size:2px;--delay:1s"></span>
+            <span class="particle" style="--x:75%;--y:15%;--dur:6s;--size:4px;--delay:0.5s"></span>
+            <span class="particle" style="--x:85%;--y:55%;--dur:8s;--size:2px;--delay:2s"></span>
+            <span class="particle" style="--x:50%;--y:80%;--dur:10s;--size:3px;--delay:1.5s"></span>
+            <span class="particle" style="--x:35%;--y:35%;--dur:7s;--size:2px;--delay:3s"></span>
+            <span class="particle" style="--x:65%;--y:45%;--dur:11s;--size:3px;--delay:0.8s"></span>
+            <span class="particle" style="--x:15%;--y:80%;--dur:8s;--size:2px;--delay:2.5s"></span>
+            <span class="particle" style="--x:90%;--y:30%;--dur:9s;--size:4px;--delay:1.2s"></span>
+            <span class="particle" style="--x:45%;--y:10%;--dur:6s;--size:2px;--delay:0.3s"></span>
+        </div>
+
+        <!-- Floating geometric shapes -->
+        <div class="hero-shapes" aria-hidden="true">
+            <div class="shape shape-ring" style="--x:12%;--y:30%"></div>
+            <div class="shape shape-cross" style="--x:82%;--y:22%"></div>
+            <div class="shape shape-diamond" style="--x:88%;--y:70%"></div>
+            <div class="shape shape-ring" style="--x:6%;--y:72%"></div>
+        </div>
+
+        <!-- Scroll indicator -->
+        <div class="hero-scroll-indicator">
+            <span class="scroll-text">Keşfet</span>
+            <div class="scroll-line"></div>
+        </div>
+
+        <div class="hero-content">
+            <div class="hero-badge" data-animate="fade-up">
+                <span class="badge-dot"></span>
+                Yazılım &bull; Yapay Zekâ &bull; Dijital Ürün
+            </div>
+            <h1 class="hero-title" data-animate="fade-up" data-delay="100">
+                Teknolojiyle<br>
+                <span class="hero-gradient-text">Dönüştürüyoruz</span>
+            </h1>
+            <p class="hero-desc" data-animate="fade-up" data-delay="200">
+                Kamu ve özel sektöre SaaS tabanlı yazılım çözümleri, yapay zekâ destekli otomasyon ve dijital dönüşüm danışmanlığı sunuyoruz.
+            </p>
+            <div class="hero-actions" data-animate="fade-up" data-delay="300">
+                <a href="cozumler.html" class="btn btn-primary magnetic-btn">
+                    Keşfet
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3"/></svg>
+                </a>
+                <a href="hakkimizda.html" class="btn btn-outline magnetic-btn">Bizi Tanıyın</a>
+            </div>
+        </div>
+
+        <div class="hero-visual" data-animate="fade-up" data-delay="400">
+            <div class="hero-terminal">
+                <div class="terminal-header">
+                    <div class="terminal-dots">
+                        <span class="dot dot-red"></span>
+                        <span class="dot dot-yellow"></span>
+                        <span class="dot dot-green"></span>
+                    </div>
+                    <span class="terminal-title">keybrothers — terminal</span>
+                </div>
+                <div class="terminal-body">
+                    <div class="terminal-line" id="termLine1">
+                        <span class="terminal-prompt">$</span>
+                        <span class="terminal-cmd" data-text="keybrothers init --project digital-transformation"></span>
+                    </div>
+                    <div class="terminal-line terminal-output" id="termLine2">
+                        <span class="terminal-success">✓</span> Proje başlatıldı: dijital-dönüşüm
+                    </div>
+                    <div class="terminal-line" id="termLine3">
+                        <span class="terminal-prompt">$</span>
+                        <span class="terminal-cmd" data-text="keybrothers deploy --ai --saas --govtech"></span>
+                    </div>
+                    <div class="terminal-line terminal-output" id="termLine4">
+                        <span class="terminal-success">✓</span> 6 SaaS ürün aktif | 50+ kurum bağlı | AI modülleri çalışıyor
+                    </div>
+                    <div class="terminal-line" id="termLine5">
+                        <span class="terminal-prompt">$</span>
+                        <span class="terminal-cmd" data-text="keybrothers status --uptime"></span>
+                    </div>
+                    <div class="terminal-line terminal-output" id="termLine6">
+                        <span class="terminal-success">✓</span> Uptime: %99.7 | İşlenen Veri: 11M+ | Durum: <span class="terminal-online">Çevrimiçi</span>
+                    </div>
+                    <div class="terminal-cursor-line">
+                        <span class="terminal-prompt">$</span>
+                        <span class="terminal-blink">|</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- DOUBLE MARQUEE -->
+    <section class="marquee-section">
+        <div class="marquee-track">
+            <div class="marquee-content">
+                <span>LegalTech</span><span class="marquee-dot"></span>
+                <span>İnsan Kaynakları</span><span class="marquee-dot"></span>
+                <span>SaaS Platformlar</span><span class="marquee-dot"></span>
+                <span>Yapay Zekâ</span><span class="marquee-dot"></span>
+                <span>GovTech</span><span class="marquee-dot"></span>
+                <span>Dijital Dönüşüm</span><span class="marquee-dot"></span>
+                <span>Otomasyon</span><span class="marquee-dot"></span>
+                <span>Bulut Teknolojileri</span><span class="marquee-dot"></span>
+                <span>LegalTech</span><span class="marquee-dot"></span>
+                <span>İnsan Kaynakları</span><span class="marquee-dot"></span>
+                <span>SaaS Platformlar</span><span class="marquee-dot"></span>
+                <span>Yapay Zekâ</span><span class="marquee-dot"></span>
+                <span>GovTech</span><span class="marquee-dot"></span>
+                <span>Dijital Dönüşüm</span><span class="marquee-dot"></span>
+                <span>Otomasyon</span><span class="marquee-dot"></span>
+                <span>Bulut Teknolojileri</span><span class="marquee-dot"></span>
+            </div>
+        </div>
+        <div class="marquee-track marquee-reverse">
+            <div class="marquee-content">
+                <span>React</span><span class="marquee-dot"></span>
+                <span>Next.js</span><span class="marquee-dot"></span>
+                <span>TypeScript</span><span class="marquee-dot"></span>
+                <span>Python</span><span class="marquee-dot"></span>
+                <span>Node.js</span><span class="marquee-dot"></span>
+                <span>PostgreSQL</span><span class="marquee-dot"></span>
+                <span>Docker</span><span class="marquee-dot"></span>
+                <span>AWS</span><span class="marquee-dot"></span>
+                <span>Tailwind</span><span class="marquee-dot"></span>
+                <span>Kubernetes</span><span class="marquee-dot"></span>
+                <span>React</span><span class="marquee-dot"></span>
+                <span>Next.js</span><span class="marquee-dot"></span>
+                <span>TypeScript</span><span class="marquee-dot"></span>
+                <span>Python</span><span class="marquee-dot"></span>
+                <span>Node.js</span><span class="marquee-dot"></span>
+                <span>PostgreSQL</span><span class="marquee-dot"></span>
+                <span>Docker</span><span class="marquee-dot"></span>
+                <span>AWS</span><span class="marquee-dot"></span>
+                <span>Tailwind</span><span class="marquee-dot"></span>
+                <span>Kubernetes</span><span class="marquee-dot"></span>
+            </div>
+        </div>
+    </section>
+
+    <!-- COUNTERS -->
+    <section class="counters-section" id="counters">
+        <div class="container">
+            <div class="counters-grid">
+                <div class="counter-card" data-animate="fade-up" data-delay="0">
+                    <div class="counter-number">
+                        <span class="counter-value" data-target="6">0</span><span class="counter-suffix">+</span>
+                    </div>
+                    <div class="counter-label">SaaS Ürün</div>
+                    <div class="counter-desc">Aktif Geliştirme</div>
+                </div>
+                <div class="counter-card" data-animate="fade-up" data-delay="100">
+                    <div class="counter-number">
+                        <span class="counter-value" data-target="50">0</span><span class="counter-suffix">+</span>
+                    </div>
+                    <div class="counter-label">Kurumsal Müşteri</div>
+                    <div class="counter-desc">Kamu & Özel Sektör</div>
+                </div>
+                <div class="counter-card" data-animate="fade-up" data-delay="200">
+                    <div class="counter-number">
+                        <span class="counter-value" data-target="11">0</span><span class="counter-suffix">M+</span>
+                    </div>
+                    <div class="counter-label">AI İşlenen Veri</div>
+                    <div class="counter-desc">Sürekli Büyüyen</div>
+                </div>
+                <div class="counter-card" data-animate="fade-up" data-delay="300">
+                    <div class="counter-number">
+                        <span class="counter-value" data-target="99.7">0</span><span class="counter-suffix">%</span>
+                    </div>
+                    <div class="counter-label">Uptime</div>
+                    <div class="counter-desc">Kesintisiz Hizmet</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ABOUT -->
+    <section class="about" id="about">
+        <div class="container">
+            <div class="about-layout">
+                <div class="about-left" data-animate="fade-left">
+                    <span class="section-tag">Hakkımızda</span>
+                    <h2 class="section-title-left">
+                        Teknoloji ile iş dünyası<br>
+                        arasında <span class="gold-italic">köprü</span>
+                    </h2>
+                    <p class="about-text">
+                        KeyBrothers Tech., SaaS tabanlı ürünler geliştirerek kamu ve özel sektöre yazılım, teknoloji ve dijital dönüşüm danışmanlığı sunar. İş süreçlerini sadeleştiren, ölçeklenebilir ve güvenli dijital çözümler üretiriz.
+                    </p>
+                    <a href="hakkimizda.html" class="link-gold">
+                        Devamını Oku
+                        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3"/></svg>
+                    </a>
+                </div>
+                <div class="about-right" data-animate="fade-right" data-delay="150">
+                    <div class="stats-mini-grid">
+                        <div class="stat-mini-card">
+                            <div class="stat-mini-value">6+</div>
+                            <div class="stat-mini-label">SaaS Ürün</div>
+                        </div>
+                        <div class="stat-mini-card">
+                            <div class="stat-mini-value">50+</div>
+                            <div class="stat-mini-label">Kurumsal Müşteri</div>
+                        </div>
+                        <div class="stat-mini-card">
+                            <div class="stat-mini-value">11M+</div>
+                            <div class="stat-mini-label">AI İşlenen Veri</div>
+                        </div>
+                        <div class="stat-mini-card">
+                            <div class="stat-mini-value">%99.7</div>
+                            <div class="stat-mini-label">Uptime</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- TECH STACK -->
+    <section class="tech-section">
+        <div class="gold-line-top"></div>
+        <div class="container">
+            <div class="section-header" data-animate="fade-up">
+                <span class="section-tag">Teknoloji Yığını</span>
+                <h2 class="section-title">Kullandığımız <span class="gold-italic">Teknolojiler</span></h2>
+            </div>
+        </div>
+        <div class="tech-marquee-wrap">
+            <div class="tech-marquee-track">
+                <div class="tech-pill"><span class="tech-abbr">RE</span><span>React</span></div>
+                <div class="tech-pill"><span class="tech-abbr">NX</span><span>Next.js</span></div>
+                <div class="tech-pill"><span class="tech-abbr">TS</span><span>TypeScript</span></div>
+                <div class="tech-pill"><span class="tech-abbr">PY</span><span>Python</span></div>
+                <div class="tech-pill"><span class="tech-abbr">ND</span><span>Node.js</span></div>
+                <div class="tech-pill"><span class="tech-abbr">PG</span><span>PostgreSQL</span></div>
+                <div class="tech-pill"><span class="tech-abbr">DC</span><span>Docker</span></div>
+                <div class="tech-pill"><span class="tech-abbr">AW</span><span>AWS</span></div>
+                <div class="tech-pill"><span class="tech-abbr">TW</span><span>Tailwind</span></div>
+                <div class="tech-pill"><span class="tech-abbr">K8</span><span>Kubernetes</span></div>
+                <div class="tech-pill"><span class="tech-abbr">RE</span><span>React</span></div>
+                <div class="tech-pill"><span class="tech-abbr">NX</span><span>Next.js</span></div>
+                <div class="tech-pill"><span class="tech-abbr">TS</span><span>TypeScript</span></div>
+                <div class="tech-pill"><span class="tech-abbr">PY</span><span>Python</span></div>
+                <div class="tech-pill"><span class="tech-abbr">ND</span><span>Node.js</span></div>
+                <div class="tech-pill"><span class="tech-abbr">PG</span><span>PostgreSQL</span></div>
+                <div class="tech-pill"><span class="tech-abbr">DC</span><span>Docker</span></div>
+                <div class="tech-pill"><span class="tech-abbr">AW</span><span>AWS</span></div>
+                <div class="tech-pill"><span class="tech-abbr">TW</span><span>Tailwind</span></div>
+                <div class="tech-pill"><span class="tech-abbr">K8</span><span>Kubernetes</span></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SERVICES -->
+    <section class="services" id="services">
+        <div class="gold-line-top"></div>
+        <div class="container">
+            <div class="section-header-left" data-animate="fade-up">
+                <div class="section-header-row">
+                    <div>
+                        <span class="section-tag">Hizmetlerimiz</span>
+                        <h2 class="section-title-left">Ne <span class="gold-italic">yapıyoruz</span></h2>
+                    </div>
+                    <a href="hizmetler.html" class="link-gold desktop-only">
+                        Tümünü Gör
+                        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3"/></svg>
+                    </a>
+                </div>
+            </div>
+            <div class="services-grid">
+                <div class="service-card glow-card" data-animate="fade-up" data-delay="0">
+                    <div class="glow-card-bg"></div>
+                    <span class="service-num">01</span>
+                    <h3>SaaS Ürün Geliştirme</h3>
+                    <p>Bulut tabanlı, ölçeklenebilir SaaS ürünleri tasarlıyor ve geliştiriyoruz.</p>
+                    <div class="service-line"></div>
+                </div>
+                <div class="service-card glow-card" data-animate="fade-up" data-delay="100">
+                    <div class="glow-card-bg"></div>
+                    <span class="service-num">02</span>
+                    <h3>Yapay Zekâ & Otomasyon</h3>
+                    <p>İş süreçlerini hızlandıran AI ve otomasyon çözümleri geliştiriyoruz.</p>
+                    <div class="service-line"></div>
+                </div>
+                <div class="service-card glow-card" data-animate="fade-up" data-delay="200">
+                    <div class="glow-card-bg"></div>
+                    <span class="service-num">03</span>
+                    <h3>Pazarlama Teknolojileri</h3>
+                    <p>Kampanya yönetimi ve içerik optimizasyonu için MarTech araçlar tasarlıyoruz.</p>
+                    <div class="service-line"></div>
+                </div>
+                <div class="service-card glow-card" data-animate="fade-up" data-delay="300">
+                    <div class="glow-card-bg"></div>
+                    <span class="service-num">04</span>
+                    <h3>Dijital Medya & Oyun</h3>
+                    <p>Etkileşimli deneyimler ve oyunlaştırma kurguları üzerinde çalışıyoruz.</p>
+                    <div class="service-line"></div>
+                </div>
+            </div>
+            <div class="mobile-only center-text mt-40">
+                <a href="hizmetler.html" class="link-gold">Tüm Hizmetleri Gör →</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- SOLUTIONS -->
+    <section class="solutions" id="solutions">
+        <div class="container">
+            <div class="section-header-left" data-animate="fade-up">
+                <div class="section-header-row">
+                    <div>
+                        <span class="section-tag">Çözümlerimiz</span>
+                        <h2 class="section-title-left">Öne çıkan <span class="gold-italic">ürünlerimiz</span></h2>
+                    </div>
+                    <a href="cozumler.html" class="link-gold desktop-only">
+                        Tümünü Gör
+                        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3"/></svg>
+                    </a>
+                </div>
+            </div>
+            <div class="solutions-grid">
+                <div class="solution-card glow-card" data-animate="fade-up" data-delay="0">
+                    <div class="glow-card-bg"></div>
+                    <span class="solution-tag">Yapay Zekâ</span>
+                    <h3>AI Otomasyon</h3>
+                    <p>İş süreçleri otomasyonu. Tekrarlayan görevleri ortadan kaldırarak verimliliği artırır. NLP ve prompt üretim araçlarıyla desteklenir.</p>
+                    <div class="service-line"></div>
+                </div>
+                <div class="solution-card glow-card" data-animate="fade-up" data-delay="100">
+                    <div class="glow-card-bg"></div>
+                    <span class="solution-tag">GovTech</span>
+                    <h3>Kamu Çözümleri</h3>
+                    <p>Belediyeler ve kamu kurumları için dijital dönüşüm platformları. Vatandaş odaklı yönetim araçları.</p>
+                    <div class="service-line"></div>
+                </div>
+                <div class="solution-card glow-card" data-animate="fade-up" data-delay="200">
+                    <div class="glow-card-bg"></div>
+                    <span class="solution-tag">LegalTech</span>
+                    <h3>Hukuk Teknolojileri</h3>
+                    <p>Hukuk süreçlerini dijitalleştiren, sözleşme analizi ve doküman yönetimi sağlayan LegalTech çözümleri.</p>
+                    <div class="service-line"></div>
+                </div>
+                <div class="solution-card glow-card" data-animate="fade-up" data-delay="300">
+                    <div class="glow-card-bg"></div>
+                    <span class="solution-tag">Yazılım</span>
+                    <h3>SaaS Platformlar</h3>
+                    <p>Bulut tabanlı, ölçeklenebilir SaaS ürünleri. İK yönetimi, ticaret çözümleri ve kurumsal araçlar.</p>
+                    <div class="service-line"></div>
+                </div>
+            </div>
+            <div class="mobile-only center-text mt-40">
+                <a href="cozumler.html" class="link-gold">Tüm Ürünleri Gör →</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- PROCESS TIMELINE -->
+    <section class="process-home" id="process">
+        <div class="gold-line-top"></div>
+        <div class="container">
+            <div class="section-header" data-animate="fade-up">
+                <span class="section-tag">Sürecimiz</span>
+                <h2 class="section-title">Nasıl <span class="gold-italic">Çalışıyoruz</span></h2>
+                <p class="section-subtitle">Her adım titizlikle planlanır, her detay özenle düşünülür.</p>
+            </div>
+            <div class="timeline">
+                <div class="timeline-line" aria-hidden="true">
+                    <div class="timeline-line-fill" id="timelineFill"></div>
+                </div>
+                <div class="timeline-step" data-animate="fade-up" data-delay="0">
+                    <div class="timeline-dot-wrap"><div class="timeline-dot"></div></div>
+                    <div class="timeline-content">
+                        <span class="timeline-num">01</span>
+                        <span class="timeline-duration">1-2 Hafta</span>
+                        <h3>Keşif & Analiz</h3>
+                        <p>İhtiyaçlarınızı derinlemesine analiz ediyor, teknik ve stratejik yol haritası çıkarıyoruz.</p>
+                    </div>
+                </div>
+                <div class="timeline-step" data-animate="fade-up" data-delay="100">
+                    <div class="timeline-dot-wrap"><div class="timeline-dot"></div></div>
+                    <div class="timeline-content">
+                        <span class="timeline-num">02</span>
+                        <span class="timeline-duration">2-3 Hafta</span>
+                        <h3>Tasarım & Prototip</h3>
+                        <p>Kullanıcı deneyimi odaklı tasarımlar ve etkileşimli prototipler oluşturuyoruz.</p>
+                    </div>
+                </div>
+                <div class="timeline-step" data-animate="fade-up" data-delay="200">
+                    <div class="timeline-dot-wrap"><div class="timeline-dot"></div></div>
+                    <div class="timeline-content">
+                        <span class="timeline-num">03</span>
+                        <span class="timeline-duration">4-8 Hafta</span>
+                        <h3>Geliştirme</h3>
+                        <p>En güncel teknolojilerle kodlama. Hız, güvenlik ve ölçeklenebilirlik önceliğimiz.</p>
+                    </div>
+                </div>
+                <div class="timeline-step" data-animate="fade-up" data-delay="300">
+                    <div class="timeline-dot-wrap"><div class="timeline-dot"></div></div>
+                    <div class="timeline-content">
+                        <span class="timeline-num">04</span>
+                        <span class="timeline-duration">1-2 Hafta</span>
+                        <h3>Test & Lansman</h3>
+                        <p>Kapsamlı testler, performans optimizasyonu ve kusursuz bir lansman deneyimi.</p>
+                    </div>
+                </div>
+                <div class="timeline-step" data-animate="fade-up" data-delay="400">
+                    <div class="timeline-dot-wrap"><div class="timeline-dot"></div></div>
+                    <div class="timeline-content">
+                        <span class="timeline-num">05</span>
+                        <span class="timeline-duration">Süresiz</span>
+                        <h3>Sürekli Destek</h3>
+                        <p>Lansman sonrası bakım, güncelleme ve öncelikli teknik destek hizmeti.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- WHY US -->
+    <section class="why-us" id="stats">
+        <div class="gold-line-top"></div>
+        <div class="container">
+            <div class="section-header" data-animate="fade-up">
+                <span class="section-tag">Neden Biz</span>
+                <h2 class="section-title">Neden <span class="gold-italic">KeyBrothers Tech?</span></h2>
+            </div>
+            <div class="why-grid">
+                <div class="why-card glow-card" data-animate="fade-up" data-delay="0">
+                    <div class="glow-card-bg"></div>
+                    <span class="why-badge">01</span>
+                    <h3>Ürün Odaklı Yaklaşım</h3>
+                    <p>Her projeye geçici iş değil, uzun vadeli ürün gözüyle bakıyor; yol haritası, metrikler ve geri bildirim döngüsünü birlikte tanımlıyoruz.</p>
+                </div>
+                <div class="why-card glow-card" data-animate="fade-up" data-delay="100">
+                    <div class="glow-card-bg"></div>
+                    <span class="why-badge">02</span>
+                    <h3>Güvenlik & Ölçeklenebilirlik</h3>
+                    <p>Altyapı tasarımında güvenlik, performans ve ölçeklenebilirliği en baştan ele alıyor; büyüdükçe ayakta kalan sistemler kuruyoruz.</p>
+                </div>
+                <div class="why-card glow-card" data-animate="fade-up" data-delay="200">
+                    <div class="glow-card-bg"></div>
+                    <span class="why-badge">03</span>
+                    <h3>Şeffaf Süreçler</h3>
+                    <p>Planlama, geliştirme ve yayına alma aşamalarında net iletişim, düzenli raporlama ve takip edilebilir süreçler sunuyoruz.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- GUARANTEES -->
+    <section class="guarantees-section">
+        <div class="container">
+            <div class="section-header" data-animate="fade-up">
+                <span class="section-tag">Güvencelerimiz</span>
+                <h2 class="section-title">Size <span class="gold-italic">Sözümüz</span></h2>
+            </div>
+            <div class="guarantees-grid">
+                <div class="guarantee-card glow-card" data-animate="fade-up" data-delay="0">
+                    <div class="glow-card-bg"></div>
+                    <div class="guarantee-icon">∞</div>
+                    <span class="guarantee-label">Garanti</span>
+                    <h3>Sürekli Destek</h3>
+                    <p>Proje teslimi sonrasında teknik destek ve bakım hizmeti sunuyoruz. Her zaman yanınızdayız.</p>
+                </div>
+                <div class="guarantee-card glow-card" data-animate="fade-up" data-delay="100">
+                    <div class="glow-card-bg"></div>
+                    <div class="guarantee-icon">24/7</div>
+                    <span class="guarantee-label">Garanti</span>
+                    <h3>Öncelikli İletişim</h3>
+                    <p>Sorularınız ve talepleriniz için öncelikli iletişim hattı. Hızlı yanıt, hızlı çözüm.</p>
+                </div>
+                <div class="guarantee-card glow-card" data-animate="fade-up" data-delay="200">
+                    <div class="glow-card-bg"></div>
+                    <div class="guarantee-icon">100<span>%</span></div>
+                    <span class="guarantee-label">Garanti</span>
+                    <h3>Memnuniyet Odaklı</h3>
+                    <p>Müşteri memnuniyetini en üst düzeyde tutarak, beklentilerinizin ötesine geçiyoruz.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="cta-section" id="contact">
+        <div class="cta-glow"></div>
+        <div class="gold-line-top"></div>
+        <div class="container">
+            <div class="cta-content" data-animate="fade-up">
+                <span class="section-tag">İletişim</span>
+                <h2 class="cta-title">
+                    Dijital dönüşümünüzü<br>
+                    birlikte <span class="gold-italic">başlatalım</span>
+                </h2>
+                <p class="cta-desc">Projenizi değerlendirelim, ihtiyacınıza özel bir yol haritası oluşturalım.</p>
+                <div class="cta-actions">
+                    <a href="mailto:info@keybrotherstech.com" class="btn btn-primary magnetic-btn">
+                        Bize Ulaşın
+                    </a>
+                    <a href="cozumler.html" class="btn btn-outline magnetic-btn">Çözümlerimiz</a>
+                </div>
+                <div class="cta-info">
+                    <div class="cta-info-item">
+                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><path d="M22 6l-10 7L2 6"/></svg>
+                        info@keybrotherstech.com
+                    </div>
+                    <div class="cta-info-item">
+                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+                        0544 379 08 31
+                    </div>
+                    <div class="cta-info-item">
+                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                        Çankaya, Ankara
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <div class="footer-gold-line"></div>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <a href="#hero" class="footer-logo">
+                        <img src="favicon.svg" alt="KeyBrothers Tech" width="28" height="28" class="footer-logo-img">
+                        <span>KeyBrothers Tech.</span>
+                    </a>
+                    <p class="footer-about">Yazılım, yapay zekâ ve dijital ürün geliştirme odağında güvenilir teknolojik çözümler üretiyoruz.</p>
+                </div>
+                <div class="footer-col">
+                    <h4>Sayfa</h4>
+                    <a href="hakkimizda.html">Hakkımızda</a>
+                    <a href="cozumler.html">Ürünlerimiz</a>
+                    <a href="hizmetler.html">Hizmetler</a>
+                    <a href="iletisim.html">İletişim</a>
+                </div>
+                <div class="footer-col">
+                    <h4>Ürünler</h4>
+                    <span>İK Yönetim</span>
+                    <span>AI Otomasyon</span>
+                    <span>Prompt Studio</span>
+                </div>
+                <div class="footer-col">
+                    <h4>İletişim</h4>
+                    <a href="mailto:info@keybrotherstech.com">info@keybrotherstech.com</a>
+                    <a href="tel:+905443790831">0544 379 08 31</a>
+                    <span>Çankaya, Ankara</span>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <span>&copy; 2026 KeyBrothers Tech. Tüm hakları saklıdır.</span>
+                <a href="https://keybrotherstech.com" target="_blank" rel="noopener noreferrer">keybrotherstech.com</a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

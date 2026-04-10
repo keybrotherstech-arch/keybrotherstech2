@@ -1,0 +1,16 @@
+{
+  "name": "KeyBrothers Tech.",
+  "short_name": "KeyBrothers",
+  "icons": [
+    {
+      "src": "favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any"
+    }
+  ],
+  "theme_color": "#0c0c0c",
+  "background_color": "#0c0c0c",
+  "display": "standalone",
+  "start_url": "/"
+}
