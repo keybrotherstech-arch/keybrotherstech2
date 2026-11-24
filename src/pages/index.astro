@@ -1,352 +1,198 @@
 ---
+import { Image } from 'astro:assets';
 import BaseLayout from '../layouts/BaseLayout.astro';
-import aylexLogo from '../assets/aylex-logo-white.png';
-import { site } from '../data/site';
+import BrowserFrame from '../components/BrowserFrame.astro';
+import ThemeImage from '../components/ThemeImage.astro';
+import { site, products, services, process, reasons } from '../data/site';
+
+// Urun ekranlari: her urunun kendi sitesinden alinmis gercek ekran goruntuleri (iki tema).
+import aylexLight from '../assets/urunler/aylex-light.png';
+import aylexDark from '../assets/urunler/aylex-dark.png';
+import vekilinLight from '../assets/urunler/vekilin-light.png';
+import vekilinDark from '../assets/urunler/vekilin-dark.png';
+import promptturkLight from '../assets/urunler/promptturk-light.png';
+import promptturkDark from '../assets/urunler/promptturk-dark.png';
+
+// Urun logolari: kendi dosyalari, yeniden cizilmez.
+import aylexLogoDark from '../assets/logolar/aylex-logo-dark.png';
+import aylexLogoWhite from '../assets/logolar/aylex-logo-white.png';
+import vekilinIcon from '../assets/logolar/vekilin-ikon.svg';
+import promptturkIcon from '../assets/logolar/promptturk-ikon.png';
+
+const shots = {
+  aylex: { light: aylexLight, dark: aylexDark },
+  vekilin: { light: vekilinLight, dark: vekilinDark },
+  promptturk: { light: promptturkLight, dark: promptturkDark },
+} as const;
+
+// Ust bolumdeki pencere dizisi: arkadan one.
+const heroOrder = ['aylex', 'promptturk', 'vekilin'] as const;
+const heroWindows = heroOrder.map((key) => products.find((p) => p.key === key)!);
+
+const serviceIcons: Record<string, string> = {
+  saas: '<rect x="3" y="4" width="18" height="16" rx="2"/><path d="M3 9h18M8 14h8"/>',
+  'yapay-zeka': '<path d="M12 3v18M3 12h18M6 6l12 12M18 6 6 18"/>',
+  pazarlama: '<path d="M4 19V9m8 10V5m8 14v-7M2 19h20"/>',
+  'medya-oyun': '<rect x="3" y="5" width="18" height="14" rx="3"/><path d="M7 12h5m-2.5-2.5v5M16 11h.01M18 13h.01"/>',
+};
 ---
 <BaseLayout
-  title={`${site.name} — ${site.tagline}`}
+  title="KeyBrothers Teknoloji | Yazılım ve yapay zeka"
   description={site.description}
   path="/"
 >
-<main id="icerik">
-
-  <!-- Hero -->
-  <section class="hero" aria-labelledby="hero-baslik">
-    <div class="container">
-      <p class="label label--marked">Ankara · Yazılım ve yapay zeka</p>
-      <h1 class="hero__title" id="hero-baslik">Kendi ürününü geliştiren yazılım şirketi.</h1>
-
-      <div class="hero__body grid">
-        <nav class="toc" aria-label="Bu sayfada">
-          <p class="label">Bu sayfada</p>
-          <ol class="toc__list">
-            <li><a href="#urunler"><span class="toc__num">01</span><span>Ürünlerimiz</span><svg viewBox="0 0 16 16" aria-hidden="true" focusable="false"><path d="M8 2v11M3.5 8.5 8 13l4.5-4.5" stroke="currentColor" stroke-width="1.5" fill="none"/></svg></a></li>
-            <li><a href="#hizmetler"><span class="toc__num">02</span><span>Hizmetler</span><svg viewBox="0 0 16 16" aria-hidden="true" focusable="false"><path d="M8 2v11M3.5 8.5 8 13l4.5-4.5" stroke="currentColor" stroke-width="1.5" fill="none"/></svg></a></li>
-            <li><a href="#surec"><span class="toc__num">03</span><span>Nasıl çalışıyoruz</span><svg viewBox="0 0 16 16" aria-hidden="true" focusable="false"><path d="M8 2v11M3.5 8.5 8 13l4.5-4.5" stroke="currentColor" stroke-width="1.5" fill="none"/></svg></a></li>
-            <li><a href="#hakkimizda"><span class="toc__num">04</span><span>Hakkımızda</span><svg viewBox="0 0 16 16" aria-hidden="true" focusable="false"><path d="M8 2v11M3.5 8.5 8 13l4.5-4.5" stroke="currentColor" stroke-width="1.5" fill="none"/></svg></a></li>
-            <li><a href="#iletisim"><span class="toc__num">05</span><span>İletişim</span><svg viewBox="0 0 16 16" aria-hidden="true" focusable="false"><path d="M8 2v11M3.5 8.5 8 13l4.5-4.5" stroke="currentColor" stroke-width="1.5" fill="none"/></svg></a></li>
-          </ol>
-        </nav>
-
+  <main id="icerik">
+    <section class="hero">
+      <div class="wrap hero__grid">
         <div class="hero__copy">
-          <p class="standfirst">KeyBrothers Teknoloji; hukuk platformu AyLex'i, Meclis takip platformu Vekilin'i ve tepki simülasyonu PromptTurk'ü geliştiriyor. Aynı ürün disipliniyle kamu ve özel sektör kurumlarına yazılım ve yapay zeka çözümleri üretiyoruz.</p>
-          <div class="button-row">
-            <a class="button button--primary" href="#urunler">Ürünlerimizi inceleyin
-              <svg viewBox="0 0 16 16" aria-hidden="true" focusable="false"><path d="M2 8h11M8.5 3.5 13 8l-4.5 4.5" stroke="currentColor" stroke-width="1.5" fill="none"/></svg>
-            </a>
+          <p class="eyebrow">Ankara · Yazılım ve yapay zeka</p>
+          <h1>Kendi ürününü geliştiren yazılım şirketi.</h1>
+          <p class="hero__lead">
+            KeyBrothers Teknoloji; hukuk platformu AyLex’i, Meclis takip platformu Vekilin’i ve tepki
+            simülasyonu PromptTurk’ü geliştiriyor. Aynı ürün disipliniyle kamu ve özel sektör
+            kurumlarına yazılım ve yapay zeka çözümleri üretiyoruz.
+          </p>
+          <div class="actions">
+            <a class="button button--primary" href="#urunler">Ürünlerimizi inceleyin</a>
             <a class="button button--secondary" href="#iletisim">Bize ulaşın</a>
           </div>
         </div>
-      </div>
-    </div>
-  </section>
 
-  <!-- ================= 01 Urunlerimiz ================= -->
-  <section class="section products-head" id="urunler" aria-labelledby="urunler-baslik">
-    <div class="container grid">
-      <header class="rail">
-        <span class="rail__num" aria-hidden="true">01</span>
-        <h2 class="rail__title" id="urunler-baslik">Ürünlerimiz</h2>
-      </header>
-      <div class="content">
-        <p class="products-head__text">Üç ürün, üç ayrı alan. Her biri kendi sitesinde yaşıyor; aşağıda her birini kendi diliyle tanıtıyoruz.</p>
-        <ul class="products-index">
-          <li><a href="#aylex"><span aria-hidden="true">1.1</span>AyLex</a></li>
-          <li><a href="#vekilin"><span aria-hidden="true">1.2</span>Vekilin</a></li>
-          <li><a href="#promptturk"><span aria-hidden="true">1.3</span>PromptTurk</a></li>
-        </ul>
-      </div>
-    </div>
-  </section>
-
-  <!-- 1.1 AyLex: kendi sitesinin koyu, çelik mavisi diliyle -->
-  <section class="aylex" id="aylex" data-theme="dark" data-product="aylex" aria-labelledby="aylex-baslik">
-    <div class="container">
-      <div class="aylex__masthead">
-        <img class="aylex__logo" src={aylexLogo.src} width="500" height="362" alt="AyLex Legal Solutions">
-        <div class="aylex__meta">
-          <span class="rail__num" aria-hidden="true">1.1</span>
-          <p class="label">Hukuk teknolojisi · aylex.ai</p>
-        </div>
-      </div>
-
-      <h2 class="aylex__title" id="aylex-baslik">AyLex: hukukun her aracı, tek platformda.</h2>
-
-      <div class="aylex__split">
-        <div class="aylex__copy">
-          <p class="aylex__text">AyLex, içtihat aramadan dosya takibine, tevkilden UYAP entegrasyonuna kadar bir avukatın gündelik araçlarını tek ekranda toplar. Yapay zeka taslağı kurar; son söz her zaman avukattadır.</p>
-          <div class="aylex__actions">
-            <p class="label aylex__info">44 modül · Web, Word, Chrome, WhatsApp ve Telegram</p>
-            <div class="button-row">
-              <a class="button button--primary" href="https://aylex.ai" rel="noopener">aylex.ai'yi ziyaret edin
-                <svg viewBox="0 0 16 16" aria-hidden="true" focusable="false"><path d="M4 12 12 4M5.5 4H12v6.5" stroke="currentColor" stroke-width="1.5" fill="none"/></svg>
-              </a>
-              <a class="button button--secondary" href="#aylex-ozellikler">Ürünü inceleyin</a>
-            </div>
-          </div>
-        </div>
-
-        <figure class="screen">
-          <figcaption class="label screen__caption">Temsili ekran</figcaption>
-          <div class="screen__frame" role="img" aria-label="Temsili AyLex arama ekranı: arama kutusunda “kira uyarlama emsal ölçütleri” yazıyor; altında İçtihat, Mevzuat ve Özelge etiketli üç sonuç satırı var.">
-            <div class="screen__side">
-              <span class="screen__brand">AyLex</span>
-              <span class="screen__nav-item screen__nav-item--active">İçtihat arama</span>
-              <span class="screen__nav-item">Dosya takibi</span>
-              <span class="screen__nav-item">Tevkil</span>
-              <span class="screen__nav-item">UYAP</span>
-            </div>
-            <div class="screen__main">
-              <div class="screen__search">
-                <svg viewBox="0 0 18 18" aria-hidden="true" focusable="false"><circle cx="7.5" cy="7.5" r="5" stroke="currentColor" stroke-width="1.5" fill="none"/><path d="m11.5 11.5 4.5 4.5" stroke="currentColor" stroke-width="1.5" fill="none"/></svg>
-                <span class="screen__query">kira uyarlama emsal ölçütleri</span>
-                <span class="screen__go">Ara</span>
+        <div class="hero__visual" aria-hidden="true">
+          <div class="cascade">
+            {heroWindows.map((p) => (
+              <div class="cascade__window">
+                <BrowserFrame
+                  address={p.domain}
+                  light={shots[p.key].light}
+                  dark={shots[p.key].dark}
+                  alt=""
+                  sizes="(max-width: 900px) 78vw, 480px"
+                />
               </div>
-              <div>
-                <div class="result">
-                  <span class="tag">İÇTİHAT</span>
-                  <span class="bars"><i class="bar bar--title w-75"></i><i class="bar w-95"></i><i class="bar w-85"></i><i class="bar bar--cite"></i></span>
+            ))}
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="urunler">
+      <div class="wrap">
+        <div class="section__heading">
+          <h2>Ürünlerimiz</h2>
+        </div>
+
+        <div class="product-list">
+          {products.map((p) => (
+            <article class="product" data-product={p.key}>
+              <div class="product__copy">
+                <div class="product__brand">
+                  {p.key === 'aylex' && (
+                    <ThemeImage light={aylexLogoDark} dark={aylexLogoWhite} alt="AyLex" width={84} loading="eager" class="product__logo" />
+                  )}
+                  {p.key === 'vekilin' && (
+                    <>
+                      <Image src={vekilinIcon} alt="" width={36} height={36} class="product__icon" />
+                      <span class="product__wordmark product__wordmark--vekilin">Vekilin<span>.</span></span>
+                    </>
+                  )}
+                  {p.key === 'promptturk' && (
+                    <>
+                      <Image src={promptturkIcon} alt="" width={36} densities={[1, 2, 3]} class="product__icon" />
+                      <span class="product__wordmark">PromptTurk</span>
+                    </>
+                  )}
                 </div>
-                <div class="result">
-                  <span class="tag">MEVZUAT</span>
-                  <span class="bars"><i class="bar bar--title w-55"></i><i class="bar w-95"></i><i class="bar w-65"></i><i class="bar bar--cite"></i></span>
-                </div>
-                <div class="result">
-                  <span class="tag">ÖZELGE</span>
-                  <span class="bars"><i class="bar bar--title w-65"></i><i class="bar w-85"></i><i class="bar w-75"></i><i class="bar bar--cite"></i></span>
-                </div>
+                <p class="product__category">{p.category}</p>
+                <h3>{p.title}</h3>
+                <p class="product__summary">{p.summary}</p>
+                <ul class="product__features">
+                  {p.features.map((f) => <li>{f}</li>)}
+                </ul>
+                <a class="product__link" href={p.url}>
+                  {p.linkLabel}
+                  <svg viewBox="0 0 16 16" aria-hidden="true" focusable="false"><path d="M4 12 12 4M6 4h6v6" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                </a>
               </div>
-            </div>
-          </div>
-        </figure>
-      </div>
-
-      <ul class="aylex__points" id="aylex-ozellikler">
-        <li class="point">
-          <h3 class="point__title">Kaynak gösteren yapay zeka asistanı</h3>
-          <p class="point__text">Her yanıt içtihat ve mevzuat atıflı.</p>
-        </li>
-        <li class="point">
-          <h3 class="point__title">81 ilde tevkil ağı</h3>
-          <p class="point__text">Ücretsiz ve komisyonsuz.</p>
-        </li>
-        <li class="point">
-          <h3 class="point__title">Resmi sistemlerle entegre</h3>
-          <p class="point__text">UYAP, UETS, KEP ve <span class="nowrap">e-imza.</span></p>
-        </li>
-      </ul>
-    </div>
-  </section>
-
-  <!-- 1.2 Vekilin: kendi sitesinin koyu zemin, bordo şerit ve kalın grotesk diliyle -->
-  <section class="vk" id="vekilin" aria-labelledby="vekilin-baslik">
-    <div class="vk__strip">
-      <div class="container vk__strip-in">
-        <span class="vk__badge">Meclis</span>
-        <span>TBMM 28. Dönem · her bilgi TBMM kaydına bağlı</span>
-      </div>
-    </div>
-    <div class="container vk__body">
-      <div class="vk__intro">
-        <p class="vk__logo" aria-hidden="true">Vekilin<span>.</span></p>
-        <p class="vk__eyebrow"><span aria-hidden="true">1.2 · </span>Sivil teknoloji · vekilin.com</p>
-        <h2 class="vk__title" id="vekilin-baslik">Vekilin Meclis'te ne yaptı?</h2>
-        <p class="vk__text">İlini seç, vekilini bul. Vekilin; her milletvekilinin yazılı sorularını, kanun tekliflerini, açık oylamalardaki oylarını ve konuşmalarını TBMM kayıtlarından alır, sade bir dille gösterir.</p>
-        <ul class="vk__chips" aria-label="Vekilin'de neler var"><li>Vekiller</li><li>Sorular</li><li>Kanunlar</li><li>Teklifler</li><li>Oylamalar</li><li>Komisyonlar</li><li>Bütçe</li><li>Seçim Simülasyonu</li></ul>
-        <a class="vk__button" href="https://vekilin.com" rel="noopener">vekilin.com'u ziyaret edin <svg viewBox="0 0 16 16" aria-hidden="true" focusable="false"><path d="M4 12 12 4M5.5 4H12v6.5" stroke="currentColor" stroke-width="1.5" fill="none"/></svg></a>
-      </div>
-      <div class="vk__cards">
-        <article class="vk__card">
-          <div class="vk__card-head">
-            <h3 class="vk__card-title">Meclis'in haritası</h3>
-            <span class="vk__pill">Yazılı soru · son 30 gün</span>
-          </div>
-          <div class="vk__heat" aria-hidden="true"><span class="vk__cell vk__cell--0"></span><span class="vk__cell vk__cell--1"></span><span class="vk__cell vk__cell--2"></span><span class="vk__cell vk__cell--1"></span><span class="vk__cell vk__cell--3"></span><span class="vk__cell vk__cell--2"></span><span class="vk__cell vk__cell--0"></span><span class="vk__cell vk__cell--1"></span><span class="vk__cell vk__cell--4"></span><span class="vk__cell vk__cell--2"></span><span class="vk__cell vk__cell--1"></span><span class="vk__cell vk__cell--0"></span><span class="vk__cell vk__cell--1"></span><span class="vk__cell vk__cell--3"></span><span class="vk__cell vk__cell--2"></span><span class="vk__cell vk__cell--4"></span><span class="vk__cell vk__cell--1"></span><span class="vk__cell vk__cell--0"></span><span class="vk__cell vk__cell--2"></span><span class="vk__cell vk__cell--3"></span><span class="vk__cell vk__cell--1"></span><span class="vk__cell vk__cell--2"></span><span class="vk__cell vk__cell--0"></span><span class="vk__cell vk__cell--1"></span><span class="vk__cell vk__cell--2"></span><span class="vk__cell vk__cell--1"></span><span class="vk__cell vk__cell--0"></span><span class="vk__cell vk__cell--3"></span><span class="vk__cell vk__cell--2"></span><span class="vk__cell vk__cell--4"></span><span class="vk__cell vk__cell--1"></span><span class="vk__cell vk__cell--2"></span><span class="vk__cell vk__cell--3"></span><span class="vk__cell vk__cell--0"></span><span class="vk__cell vk__cell--1"></span><span class="vk__cell vk__cell--2"></span><span class="vk__cell vk__cell--0"></span><span class="vk__cell vk__cell--2"></span><span class="vk__cell vk__cell--1"></span><span class="vk__cell vk__cell--1"></span><span class="vk__cell vk__cell--3"></span><span class="vk__cell vk__cell--0"></span><span class="vk__cell vk__cell--2"></span><span class="vk__cell vk__cell--1"></span><span class="vk__cell vk__cell--0"></span><span class="vk__cell vk__cell--4"></span><span class="vk__cell vk__cell--2"></span><span class="vk__cell vk__cell--1"></span></div>
-          <p class="vk__card-text">Hangi ilin vekilleri ne kadar soru sordu; il il, vekil başına.</p>
-          <p class="vk__note">Temsili görünüm</p>
-        </article>
-        <article class="vk__card">
-          <div class="vk__card-head">
-            <h3 class="vk__card-title">Günün Meclisi</h3>
-            <span class="vk__pill">Genel Kurul</span>
-          </div>
-          <p class="vk__card-text">O gün Genel Kurul'da ne konuşuldu: öne çıkan başlıklar, en çok geçen kelimeler ve konuşmaların püf noktaları.</p>
-          <p class="vk__note">Yapay zeka ile ham tutanaktan hazırlanır; esas olan TBMM tutanağıdır.</p>
-        </article>
-      </div>
-    </div>
-  </section>
-
-  <!-- 1.3 PromptTurk: kendi sitesinin açık zemin, beyaz kart ve hap düğme diliyle -->
-  <section class="pt" id="promptturk" aria-labelledby="promptturk-baslik">
-    <div class="container">
-      <div class="pt__panel">
-        <div class="pt__top">
-          <div class="pt__intro">
-            <p class="pt__brand"><span class="pt__mark" aria-hidden="true">P</span>PromptTurk</p>
-            <p class="pt__eyebrow"><span aria-hidden="true">1.3 · </span>Yapay zeka · promptturk.com</p>
-            <h2 class="pt__title" id="promptturk-baslik">Bir şey yapmadan önce, dünyanın tepkisini gör.</h2>
-            <p class="pt__text">O paylaşım, o ürün, o karar: yayınlamadan önce tepkiyi sahnede izleyin. Gerçek sosyal medya dilinden öğrenen yapay zeka; yorumları, tartışmaları ve mesajları sekiz platformda canlandırır.</p>
-            <a class="pt__button" href="https://promptturk.com" rel="noopener">promptturk.com'u ziyaret edin <svg viewBox="0 0 16 16" aria-hidden="true" focusable="false"><path d="M4 12 12 4M5.5 4H12v6.5" stroke="currentColor" stroke-width="1.5" fill="none"/></svg></a>
-          </div>
-          <div class="pt__stage">
-            <div class="pt__stage-head">
-              <span>Simülasyon sahnesi</span>
-              <span class="pt__tag">Temsili</span>
-            </div>
-            <p class="pt__score"><span class="pt__ring" aria-hidden="true"></span><span><strong>Viral skor</strong><em>Gündem adayı</em></span></p>
-            <ul class="pt__bubbles">
-              <li><span class="pt__avatar" aria-hidden="true">EK</span>bunu herkes konuşacak, şimdiden söyleyeyim</li>
-              <li><span class="pt__avatar" aria-hidden="true">MT</span>cesur hamle ama riskli, izliyoruz</li>
-              <li><span class="pt__avatar" aria-hidden="true">H</span>Sosyal medyanın gündemine oturdu</li>
-            </ul>
-            <p class="pt__fine">Her kişi, her yorum, her sayı sentetiktir.</p>
-          </div>
-        </div>
-        <ul class="pt__platforms" aria-label="Canlandırılan platformlar"><li>Instagram</li><li>X / Twitter</li><li>TikTok</li><li>Facebook</li><li>YouTube</li><li>Sözlük</li><li>Forumlar</li><li>Haber yorumları</li></ul>
-        <div class="pt__cards">
-          <article class="pt__card">
-            <p class="pt__card-label">Bireyler için</p>
-            <h3 class="pt__card-title">Eğlence ve merak</h3>
-            <p class="pt__card-text">“Bunu paylaşsam ne derlerdi?” sorusunun cevabı.</p>
-          </article>
-          <article class="pt__card">
-            <p class="pt__card-label">Kurumlar için</p>
-            <h3 class="pt__card-title">Öngörü ve satış</h3>
-            <p class="pt__card-text">Ürünü, fiyatı, kampanyayı pazara çıkmadan test edin. Kriz mi, alkış mı; lansmandan önce bilin.</p>
-          </article>
-          <article class="pt__card">
-            <p class="pt__card-label">Herkes için</p>
-            <h3 class="pt__card-title">Sıfır risk</h3>
-            <p class="pt__card-text">Hiçbir şey gerçek dünyaya sızmaz; sahne kapanır, hayat devam eder.</p>
-          </article>
-        </div>
-      </div>
-    </div>
-  </section>
-
-
-  <!-- 02 Hizmetler -->
-  <section class="section" id="hizmetler" aria-labelledby="hizmetler-baslik">
-    <div class="container grid">
-      <header class="rail">
-        <span class="rail__num" aria-hidden="true">02</span>
-        <h2 class="rail__title" id="hizmetler-baslik">Hizmetler</h2>
-      </header>
-      <ol class="content">
-        <li class="row">
-          <span class="row__num" aria-hidden="true">2.1</span>
-          <h3 class="row__title">SaaS Ürün Geliştirme</h3>
-          <p class="row__text">Bulut tabanlı, ölçeklenebilir ürünleri fikirden yayına tasarlıyor ve geliştiriyoruz.</p>
-        </li>
-        <li class="row">
-          <span class="row__num" aria-hidden="true">2.2</span>
-          <h3 class="row__title">Yapay Zeka ve Otomasyon</h3>
-          <p class="row__text">İş süreçlerini hızlandıran yapay zeka ve otomasyon çözümleri kuruyoruz.</p>
-        </li>
-        <li class="row">
-          <span class="row__num" aria-hidden="true">2.3</span>
-          <h3 class="row__title">Pazarlama Teknolojileri</h3>
-          <p class="row__text">Kampanya yönetimi ve içerik optimizasyonu için araçlar tasarlıyoruz.</p>
-        </li>
-        <li class="row">
-          <span class="row__num" aria-hidden="true">2.4</span>
-          <h3 class="row__title">Dijital Medya ve Oyun</h3>
-          <p class="row__text">Etkileşimli deneyimler ve oyunlaştırma kurguları üzerinde çalışıyoruz.</p>
-        </li>
-      </ol>
-    </div>
-  </section>
-
-  <!-- 03 Nasıl çalışıyoruz -->
-  <section class="section" id="surec" aria-labelledby="surec-baslik">
-    <div class="container grid">
-      <header class="rail">
-        <span class="rail__num" aria-hidden="true">03</span>
-        <h2 class="rail__title" id="surec-baslik">Nasıl çalışıyoruz</h2>
-      </header>
-      <ol class="content steps">
-        <li class="step">
-          <span class="step__num" aria-hidden="true">1</span>
-          <h3 class="step__title">Keşif</h3>
-          <p class="step__text">İhtiyacı ve kapsamı birlikte netleştiririz.</p>
-        </li>
-        <li class="step">
-          <span class="step__num" aria-hidden="true">2</span>
-          <h3 class="step__title">Tasarım</h3>
-          <p class="step__text">Akışı ve arayüzü, geliştirmeden önce görünür kılarız.</p>
-        </li>
-        <li class="step">
-          <span class="step__num" aria-hidden="true">3</span>
-          <h3 class="step__title">Geliştirme</h3>
-          <p class="step__text">Kısa döngülerle ilerler, her adımı sizinle paylaşırız.</p>
-        </li>
-        <li class="step">
-          <span class="step__num" aria-hidden="true">4</span>
-          <h3 class="step__title">Yayın ve destek</h3>
-          <p class="step__text">Yayından sonra da ürünün başında kalırız.</p>
-        </li>
-      </ol>
-    </div>
-  </section>
-
-  <!-- 04 Hakkımızda: Neden biz -->
-  <section class="section" id="hakkimizda" aria-labelledby="neden-baslik">
-    <div class="container grid">
-      <div class="rail">
-        <span class="rail__num" aria-hidden="true">04</span>
-        <p class="rail__title">Hakkımızda</p>
-      </div>
-      <div class="content">
-        <h2 class="label label--marked" id="neden-baslik">Neden biz</h2>
-        <div class="why">
-          <article class="why__item why__item--lead">
-            <h3 class="kicker">Kendi ürünümüzü işletiyoruz</h3>
-            <p class="why__statement">Yazılımı teslim edip bırakmayı değil, yaşatmayı biliyoruz.</p>
-          </article>
-          <div class="why__side">
-            <article class="why__item">
-              <h3 class="kicker">Şeffaf süreç</h3>
-              <p class="why__statement">Kapsam, takvim ve ilerleme baştan sona açıktır.</p>
+              <div class="product__visual">
+                <BrowserFrame
+                  address={p.domain}
+                  light={shots[p.key].light}
+                  dark={shots[p.key].dark}
+                  alt={p.shotAlt}
+                  sizes="(max-width: 900px) 90vw, 640px"
+                />
+              </div>
             </article>
-            <article class="why__item">
-              <h3 class="kicker">Uzun vadeli bakım</h3>
-              <p class="why__statement">Yayın sonrası destek ve geliştirme işin parçasıdır.</p>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <section class="section section--subtle" id="hizmetler">
+      <div class="wrap">
+        <div class="section__heading">
+          <h2>Hizmetler</h2>
+        </div>
+        <div class="cards">
+          {services.map((s) => (
+            <article class="card">
+              <div class="card__icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" set:html={serviceIcons[s.slug]} />
+              </div>
+              <h3>{s.title}</h3>
+              <p>{s.summary}</p>
             </article>
-          </div>
+          ))}
         </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- 05 İletişim -->
-  <section class="section contact" id="iletisim" aria-labelledby="iletisim-baslik">
-    <div class="container grid">
-      <div class="rail">
-        <span class="rail__num" aria-hidden="true">05</span>
-        <p class="rail__title">İletişim</p>
+    <section class="section">
+      <div class="wrap">
+        <div class="section__heading">
+          <h2>Nasıl çalışıyoruz</h2>
+        </div>
+        <ol class="steps">
+          {process.map((step, i) => (
+            <li class="step">
+              <span class="step__no">{String(i + 1).padStart(2, '0')}</span>
+              <h3>{step.title}</h3>
+              <p>{step.summary}</p>
+            </li>
+          ))}
+        </ol>
       </div>
-      <div class="content">
-        <h2 class="contact__title" id="iletisim-baslik">Projenizi konuşalım.</h2>
-        <p class="standfirst">İlk görüşmede ihtiyacı dinler, uygun yolu birlikte belirleriz.</p>
-        <dl class="contact__list">
-          <div class="contact__item">
-            <dt class="label">E-posta</dt>
-            <dd><a href="mailto:info@keybrotherstech.com">info@keybrotherstech.com</a></dd>
-          </div>
-          <div class="contact__item">
-            <dt class="label">Telefon</dt>
-            <dd><a href="tel:+908503024468">0850 302 44 68</a></dd>
-          </div>
-        </dl>
-        <div class="button-row">
-          <a class="button button--primary" href="mailto:info@keybrotherstech.com">İletişime geçin
-            <svg viewBox="0 0 16 16" aria-hidden="true" focusable="false"><path d="M2 8h11M8.5 3.5 13 8l-4.5 4.5" stroke="currentColor" stroke-width="1.5" fill="none"/></svg>
-          </a>
+    </section>
+
+    <section class="section section--subtle" id="hakkimizda">
+      <div class="wrap why">
+        <h2>Neden biz</h2>
+        <div class="reasons">
+          {reasons.map((r) => (
+            <article class="reason">
+              <h3>{r.title}</h3>
+              <p>{r.summary}</p>
+            </article>
+          ))}
         </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-</main>
+    <section class="section" id="iletisim">
+      <div class="wrap">
+        <div class="contact">
+          <div>
+            <h2>Projenizi konuşalım.</h2>
+            <p>İlk görüşmede ihtiyacı dinler, uygun yolu birlikte belirleriz.</p>
+            <p class="contact__details">
+              <a href={`mailto:${site.email}`}>{site.email}</a>
+              <a href={site.phone.href}>{site.phone.display}</a>
+            </p>
+          </div>
+          <a class="button contact__button" href={`mailto:${site.email}`}>E-posta gönderin</a>
+        </div>
+      </div>
+    </section>
+  </main>
 </BaseLayout>

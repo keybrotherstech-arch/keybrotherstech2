@@ -3,6 +3,8 @@
 
 export const site = {
   url: 'https://keybrotherstech.com',
+  // Logodaki ad
+  brand: 'KeyBrothers Tech.',
   name: 'KeyBrothers Teknoloji',
   legalName: 'KeyBrothers Teknoloji Yazılım ve Danışmanlık Limited Şirketi',
   tagline: 'Kendi ürününü geliştiren yazılım şirketi',
@@ -29,21 +31,66 @@ export const site = {
   },
 } as const;
 
-export const aylex = {
-  name: 'AyLex',
-  url: 'https://aylex.ai',
-  demoUrl: 'https://aylex.ai/#demo',
-  pricingUrl: 'https://aylex.ai/fiyatlandirma',
-  modulesUrl: 'https://aylex.ai/#envanter',
-  securityUrl: 'https://aylex.ai/#guvenlik',
-  loginUrl: 'https://app.aylex.ai/giris',
-} as const;
-
 export const nav = [
-  { href: '/aylex', label: 'AyLex' },
-  { href: '/hizmetler', label: 'Hizmetler' },
-  { href: '/hakkimizda', label: 'Hakkımızda' },
-  { href: '/iletisim', label: 'İletişim' },
+  { href: '/#urunler', label: 'Ürünler' },
+  { href: '/#hizmetler', label: 'Hizmetler' },
+  { href: '/#hakkimizda', label: 'Hakkımızda' },
+  { href: '/#iletisim', label: 'İletişim' },
+] as const;
+
+// Ürün metinleri her ürünün kendi sitesinden alınmıştır.
+export const products = [
+  {
+    key: 'aylex',
+    name: 'AyLex',
+    domain: 'aylex.ai',
+    url: 'https://aylex.ai',
+    category: 'Hukuk teknolojisi',
+    title: 'Hukukun her aracı, tek platformda.',
+    summary:
+      'AyLex, içtihat aramadan dosya takibine, tevkilden UYAP entegrasyonuna kadar bir avukatın gündelik araçlarını tek ekranda toplar. Yapay zeka taslağı kurar; son söz her zaman avukattadır.',
+    features: [
+      'Kaynak gösteren yapay zeka asistanı',
+      '81 ilde ücretsiz ve komisyonsuz tevkil ağı',
+      'UYAP, UETS, KEP ve e-imza entegrasyonu',
+    ],
+    linkLabel: 'aylex.ai’yi ziyaret edin',
+    shotAlt: 'AyLex sitesinde kaynak gösteren yapay zeka asistanı bölümünün ekran görüntüsü',
+  },
+  {
+    key: 'vekilin',
+    name: 'Vekilin',
+    domain: 'vekilin.com',
+    url: 'https://vekilin.com',
+    category: 'Sivil teknoloji',
+    title: 'Vekilin Meclis’te ne yaptı?',
+    summary:
+      'İlini seç, vekilini bul. Vekilin; her milletvekilinin yazılı sorularını, kanun tekliflerini, açık oylamalardaki oylarını ve konuşmalarını TBMM kayıtlarından alır, sade bir dille gösterir.',
+    features: [
+      'İl il, vekil vekil Meclis haritası',
+      'Sorular, kanunlar, teklifler ve oylamalar tek yerde',
+      'Her bilgi TBMM kaydına bağlı',
+    ],
+    linkLabel: 'vekilin.com’u ziyaret edin',
+    shotAlt: 'Vekilin ana sayfasındaki arama alanı ve Türkiye Meclis haritasının ekran görüntüsü',
+  },
+  {
+    key: 'promptturk',
+    name: 'PromptTurk',
+    domain: 'promptturk.com',
+    url: 'https://promptturk.com',
+    category: 'Yapay zeka',
+    title: 'Bir şey yapmadan önce, dünyanın tepkisini gör.',
+    summary:
+      'O paylaşım, o ürün, o karar: yayınlamadan önce tepkiyi sahnede izleyin. Gerçek sosyal medya dilinden öğrenen yapay zeka; yorumları, tartışmaları ve mesajları sekiz platformda canlandırır.',
+    features: [
+      'Bireyler için eğlence ve merak',
+      'Kurumlar için öngörü: lansmandan önce test',
+      'Her kişi, her yorum, her sayı sentetik',
+    ],
+    linkLabel: 'promptturk.com’u ziyaret edin',
+    shotAlt: 'PromptTurk ana sayfasının ekran görüntüsü',
+  },
 ] as const;
 
 export const services = [

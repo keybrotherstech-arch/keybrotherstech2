@@ -1,0 +1,22 @@
+---
+// Tarayici cercevesi icinde gercek urun ekrani. Gorsel, urunun kendi sitesinden alinmis ekran goruntusudur.
+import ThemeImage from './ThemeImage.astro';
+import type { ImageMetadata } from 'astro';
+
+interface Props {
+  address: string;
+  light: ImageMetadata;
+  dark: ImageMetadata;
+  alt: string;
+  sizes: string;
+}
+
+const { address, light, dark, alt, sizes } = Astro.props;
+---
+<div class="browser">
+  <div class="browser__bar" aria-hidden="true">
+    <span class="browser__dots"><i></i><i></i><i></i></span>
+    <span class="browser__address">{address}</span>
+  </div>
+  <ThemeImage light={light} dark={dark} alt={alt} widths={[480, 800, 1200, 1600]} sizes={sizes} class="browser__shot" />
+</div>

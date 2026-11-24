@@ -1,56 +1,43 @@
 ---
 // Alt bilgi ve kunye. Butun sayfalarda ayni dosya kullanilir.
+import Brand from './Brand.astro';
+import { site, products } from '../data/site';
 ---
 <footer class="site-footer">
-  <div class="container">
+  <div class="wrap">
     <h2 class="visually-hidden">Şirket bilgileri</h2>
-    <div class="grid">
-      <div class="rail">
-        <a class="brand" href="/" aria-label="KeyBrothers Teknoloji, sayfa başı">
-          <svg viewBox="0 0 32 32" aria-hidden="true" focusable="false">
-            <path fill="currentColor" d="M3 4h24.6L3 26.2z"/>
-            <path fill="currentColor" d="M29 5.4V29H6.4z"/>
-          </svg>
-          <span>KeyBrothers Teknoloji</span>
-        </a>
-      </div>
-      <div class="content footer__main">
-        <dl class="company">
-          <div class="company__row">
-            <dt class="label">Unvan</dt>
-            <dd>KeyBrothers Teknoloji Yazılım ve Danışmanlık Limited Şirketi</dd>
-          </div>
-          <div class="company__row">
-            <dt class="label">Adres</dt>
-            <dd>MTC Plaza, Emek Mah., Bişkek Cad. No: 125-127 D:16, 06490 Çankaya/Ankara</dd>
-          </div>
-          <div class="company__row">
-            <dt class="label">MERSİS</dt>
-            <dd>0549094442000001</dd>
-          </div>
-          <div class="company__row">
-            <dt class="label">Ticaret sicil</dt>
-            <dd>Ankara Ticaret Sicil No 540788</dd>
-          </div>
-          <div class="company__row">
-            <dt class="label">KEP</dt>
-            <dd>keybrothersteknoloji@hs01.kep.tr</dd>
-          </div>
+    <div class="site-footer__grid">
+      <div class="site-footer__company">
+        <Brand label="KeyBrothers Tech, sayfa başı" />
+        <p class="site-footer__legal-name">{site.legalName}</p>
+        <address>
+          {site.address.oneLine}<br />
+          <a href={`mailto:${site.email}`}>{site.email}</a> · <a href={site.phone.href}>{site.phone.display}</a>
+        </address>
+        <dl class="registry">
+          <div><dt>MERSİS</dt><dd>{site.registry.mersis}</dd></div>
+          <div><dt>Ticaret sicil</dt><dd>{site.registry.tradeRegistry}</dd></div>
+          <div><dt>KEP</dt><dd>{site.registry.kep}</dd></div>
         </dl>
-        <nav class="footer__links" aria-label="Alt bilgi bağlantıları">
-          <p class="label">Bağlantılar</p>
+      </div>
+
+      <nav class="site-footer__links" aria-label="Alt bilgi bağlantıları">
+        <div>
+          <p class="site-footer__heading">Ürünler</p>
           <ul>
-            <li><a href="/#aylex">AyLex</a></li>
+            {products.map((p) => <li><a href={p.url}>{p.name}</a></li>)}
+          </ul>
+        </div>
+        <div>
+          <p class="site-footer__heading">Şirket</p>
+          <ul>
             <li><a href="/#hizmetler">Hizmetler</a></li>
             <li><a href="/#hakkimizda">Hakkımızda</a></li>
             <li><a href="/#iletisim">İletişim</a></li>
-            <!-- Taslak yolları: gerçek sayfalar hazır olunca adresler kesinleşir -->
-            <li><a href="/kvkk-aydinlatma-metni">KVKK Aydınlatma Metni</a></li>
-            <li><a href="/gizlilik-politikasi">Gizlilik Politikası</a></li>
           </ul>
-        </nav>
-      </div>
+        </div>
+      </nav>
     </div>
-    <p class="footer__bottom">© 2026 KeyBrothers Teknoloji</p>
+    <p class="site-footer__bottom">© 2026 {site.name}</p>
   </div>
 </footer>

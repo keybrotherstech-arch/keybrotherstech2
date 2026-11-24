@@ -13,37 +13,31 @@ export default defineConfig({
   // (ziyaretci tarayicisi ucuncu tarafa istek atmaz).
   fonts: [
     {
+      // Govde ve basliklar
       provider: fontProviders.fontsource(),
-      name: 'Newsreader',
-      cssVariable: '--font-newsreader',
-      weights: ['300 600'],
+      name: 'Inter',
+      cssVariable: '--font-inter',
+      weights: ['400 800'],
       styles: ['normal'],
       subsets: ['latin', 'latin-ext'],
-      fallbacks: ['Iowan Old Style', 'Palatino Linotype', 'Georgia', 'serif'],
+      fallbacks: ['system-ui', 'Segoe UI', 'Arial', 'sans-serif'],
     },
     {
+      // Logodaki "KeyBrothers Tech." yazisinin tipi
       provider: fontProviders.fontsource(),
-      name: 'IBM Plex Sans',
-      cssVariable: '--font-plex-sans',
-      weights: [400, 500, 600],
+      name: 'Poppins',
+      cssVariable: '--font-poppins',
+      weights: [600],
       styles: ['normal'],
       subsets: ['latin', 'latin-ext'],
-      fallbacks: ['Segoe UI', 'system-ui', 'Arial', 'sans-serif'],
+      fallbacks: ['system-ui', 'Segoe UI', 'sans-serif'],
     },
     {
-      provider: fontProviders.fontsource(),
-      name: 'IBM Plex Mono',
-      cssVariable: '--font-plex-mono',
-      weights: [500],
-      styles: ['normal'],
-      subsets: ['latin', 'latin-ext'],
-      fallbacks: ['ui-monospace', 'Cascadia Mono', 'Consolas', 'monospace'],
-    },
-    {
+      // Vekilin'in kendi sitesindeki yazi isaretinin tipi
       provider: fontProviders.fontsource(),
       name: 'Schibsted Grotesk',
       cssVariable: '--font-schibsted',
-      weights: ['400 900'],
+      weights: [800],
       styles: ['normal'],
       subsets: ['latin', 'latin-ext'],
       fallbacks: ['system-ui', 'Segoe UI', 'sans-serif'],
