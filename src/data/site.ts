@@ -7,7 +7,7 @@ export const site = {
   legalName: 'KeyBrothers Teknoloji Yazılım ve Danışmanlık Limited Şirketi',
   tagline: 'Kendi ürününü geliştiren yazılım şirketi',
   description:
-    'KeyBrothers Teknoloji, avukatlar için hukuk platformu AyLex’i geliştirir; kamu ve özel sektör kurumlarına yazılım ve yapay zeka çözümleri üretir.',
+    'KeyBrothers Teknoloji; hukuk platformu AyLex, Meclis takip platformu Vekilin ve tepki simülasyonu PromptTurk’ün geliştiricisidir. Kamu ve özel sektör kurumlarına yazılım ve yapay zeka çözümleri üretir.',
   locale: 'tr_TR',
   email: 'info@keybrotherstech.com',
   phone: {
