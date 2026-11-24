@@ -12,7 +12,7 @@ interface Props {
 const { product: p } = Astro.props;
 const image = shot(p.key);
 ---
-<article class="pcard" data-product={p.key}>
+<article class="pcard" data-product={p.key} data-reveal>
   <div class="pcard__visual">
     <BrowserFrame address={p.domain} light={image.light} dark={image.dark} alt="" sizes="(max-width: 1000px) 90vw, 380px" />
   </div>

@@ -25,9 +25,9 @@ const serviceIcons: Record<string, string> = {
 
     <section class="section section--after-header">
       <div class="wrap">
-        <div class="cards cards--two">
+        <div class="cards cards--two" data-reveal-group="90">
           {services.map((s) => (
-            <article class="card">
+            <article class="card" data-reveal>
               <div class="card__icon" aria-hidden="true">
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" set:html={serviceIcons[s.slug]} />
               </div>
@@ -41,12 +41,12 @@ const serviceIcons: Record<string, string> = {
 
     <section class="section section--subtle">
       <div class="wrap">
-        <div class="section__heading">
+        <div class="section__heading" data-reveal>
           <h2>Nasıl çalışıyoruz</h2>
         </div>
-        <ol class="steps">
+        <ol class="steps" data-reveal-group="160">
           {process.map((step, i) => (
-            <li class="step">
+            <li class="step" data-reveal>
               <span class="step__no">{String(i + 1).padStart(2, '0')}</span>
               <h3>{step.title}</h3>
               <p>{step.summary}</p>

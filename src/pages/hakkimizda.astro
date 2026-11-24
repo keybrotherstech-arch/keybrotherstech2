@@ -18,10 +18,10 @@ import { site, products, reasons } from '../data/site';
 
     <section class="section section--after-header">
       <div class="wrap why">
-        <h2>Neden biz</h2>
-        <div class="reasons">
+        <h2 data-reveal>Neden biz</h2>
+        <div class="reasons" data-reveal-group="100">
           {reasons.map((r) => (
-            <article class="reason">
+            <article class="reason" data-reveal>
               <h3>{r.title}</h3>
               <p>{r.summary}</p>
             </article>
@@ -32,10 +32,10 @@ import { site, products, reasons } from '../data/site';
 
     <section class="section section--subtle">
       <div class="wrap why">
-        <h2>Ürünlerimiz</h2>
-        <div class="reasons">
+        <h2 data-reveal>Ürünlerimiz</h2>
+        <div class="reasons" data-reveal-group="100">
           {products.map((p) => (
-            <article class="reason reason--link">
+            <article class="reason reason--link" data-reveal>
               <h3><a href={`/${p.key}`}>{p.name}</a></h3>
               <p>{p.category} · {p.title}</p>
             </article>
@@ -46,8 +46,8 @@ import { site, products, reasons } from '../data/site';
 
     <section class="section">
       <div class="wrap why">
-        <h2>Şirket bilgileri</h2>
-        <dl class="company">
+        <h2 data-reveal>Şirket bilgileri</h2>
+        <dl class="company" data-reveal>
           <div><dt>Unvan</dt><dd>{site.legalName}</dd></div>
           <div><dt>Adres</dt><dd>{site.address.oneLine}</dd></div>
           <div><dt>MERSİS</dt><dd>{site.registry.mersis}</dd></div>

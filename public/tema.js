@@ -4,6 +4,7 @@
   var KEY = 'kb-tema';
   var root = document.documentElement;
   var media = window.matchMedia ? window.matchMedia('(prefers-color-scheme: dark)') : null;
+  var switchTimer = 0;
 
   function stored() {
     try {
@@ -56,6 +57,12 @@
     } catch (e) {
       /* saklanamazsa secim yalniz bu sayfa icin gecerli olur */
     }
+    // Renkler bir anda degil, kisa bir gecisle degisir.
+    root.classList.add('theme-switching');
+    window.clearTimeout(switchTimer);
+    switchTimer = window.setTimeout(function () {
+      root.classList.remove('theme-switching');
+    }, 320);
     apply(next);
   });
 })();
