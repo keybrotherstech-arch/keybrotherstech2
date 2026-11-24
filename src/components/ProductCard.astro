@@ -1,0 +1,28 @@
+---
+// Ana sayfadaki kisa urun karti: ustte gercek ekran, altta logo ve tek cumle. Kartin tamami urun sayfasina gider.
+import BrowserFrame from './BrowserFrame.astro';
+import ProductBrand from './ProductBrand.astro';
+import { shot } from '../data/media';
+import type { products } from '../data/site';
+
+interface Props {
+  product: (typeof products)[number];
+}
+
+const { product: p } = Astro.props;
+const image = shot(p.key);
+---
+<article class="pcard" data-product={p.key}>
+  <div class="pcard__visual">
+    <BrowserFrame address={p.domain} light={image.light} dark={image.dark} alt="" sizes="(max-width: 1000px) 90vw, 380px" />
+  </div>
+  <div class="pcard__body">
+    <ProductBrand product={p.key} />
+    <p class="product__category">{p.category}</p>
+    <h3>{p.title}</h3>
+    <a class="product__link pcard__link" href={`/${p.key}`}>
+      {p.name} sayfasına gidin
+      <svg viewBox="0 0 16 16" aria-hidden="true" focusable="false"><path d="M3 8h10M9 4l4 4-4 4" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    </a>
+  </div>
+</article>

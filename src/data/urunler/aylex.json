@@ -1,0 +1,145 @@
+{
+  "key": "aylex",
+  "seoTitle": "AyLex Hukuk Platformu | KeyBrothers Teknoloji",
+  "seoDescription": "AyLex; kaynaklı yapay zeka asistanı, içtihat ve mevzuat araması, büro yönetimi, belge araçları ve 81 ilde tevkil ağını avukatlar için tek platformda sunar.",
+  "h1": "AyLex: avukatlar için uçtan uca hukuk platformu",
+  "lead": "AyLex, KeyBrothers Teknoloji'nin geliştirdiği uçtan uca hukuk platformudur. Yapay zeka asistanından içtihat aramaya, büro yönetiminden UYAP entegrasyonuna kadar avukatın ihtiyaç duyduğu araçları tek ekranda toplar.",
+  "highlights": [
+    {
+      "title": "Kaynak gösteren yapay zeka",
+      "text": "Asistanın her yanıtı dayandığı içtihat ve mevzuat atfıyla gelir; atfa tıklayınca karar ya da madde metni açılır."
+    },
+    {
+      "title": "44 modül, tek platform",
+      "text": "Araştırma, büro yönetimi, belge araçları, entegrasyonlar ve uygulamalar 10 bölümde, tek hesapta bir arada."
+    },
+    {
+      "title": "81 ilde tevkil ağı",
+      "text": "Duruşma, haciz, keşif gibi görevler baro kaydı teyitli meslektaşlara komisyonsuz olarak devredilir."
+    },
+    {
+      "title": "Resmi sistem entegrasyonları",
+      "text": "UYAP, UETS, KEP ve e-imza bağlantısıyla veri bir kez girilir; tebligat ve süreler gözden kaçmaz."
+    }
+  ],
+  "sections": [
+    {
+      "eyebrow": "Yapay zeka asistanı",
+      "title": "Dosyayı bilen, kaynağını gösteren asistan",
+      "text": "AyLex Asistan, avukatın sorusunu ilgili dosyanın bağlamında yanıtlar. Her cevabın altında dayandığı içtihat ve mevzuat atıfları yer alır; avukat bir tıkla karar ya da madde metnine ulaşarak yanıtı denetler.",
+      "bullets": [
+        "Her iddianın yanında tıklanabilir içtihat ve mevzuat atfı",
+        "Yanıttan tek tıkla mütalaa, dilekçe ya da karar karşılaştırması",
+        "Mevzuat, içtihat ve akademik kaynakta birlikte derin araştırma",
+        "Taranmış ve el yazısı belgeleri de okuyabilme"
+      ],
+      "shotText": "Dosyanızı bilen bir meslektaş gibi.",
+      "shotUrl": "https://aylex.ai/"
+    },
+    {
+      "eyebrow": "Hukuki araştırma",
+      "title": "Külliyatın tamamı tek arama kutusunda",
+      "text": "On dört modülden oluşan araştırma bölümünde içtihat, emsal karar, mevzuat, özelge, akademik kaynak ve global hukuk tek arama kutusunda birleşir. Anlamsal arama, avukatın tarif ettiği konuyu anahtar kelimeye bağlı kalmadan bulur.",
+      "bullets": [
+        "İçtihat, emsal karar, mevzuat ve özelge araması",
+        "AYM, KİK, Rekabet Kurulu, Sayıştay, BDDK ve KVKK kararları",
+        "Sigorta tahkim kararları, akademik kaynaklar ve global hukuk",
+        "Yürürlük durumu takip edilen mevzuat maddeleri"
+      ],
+      "shotText": "Külliyat, saniyeler içinde.",
+      "shotUrl": "https://aylex.ai/"
+    },
+    {
+      "eyebrow": "Büro yönetimi",
+      "title": "Büronun bütün defterleri tek düzende",
+      "text": "Müvekkiller, dosyalar, davalar, duruşmalar, notlar, hatırlatıcılar, takvim ve finans birbirine bağlı çalışır. Duruşma tarihi takvime, tahsilat finansa, vekalet bilgisi dosyaya kendiliğinden işlenir.",
+      "bullets": [
+        "Birbirine bağlı müvekkil, dosya, dava ve duruşma kayıtları",
+        "Hatırlatıcı ve takvimle süre ve duruşma takibi",
+        "Finans ve AyLex İcra ile tahsilat ve icra takibi",
+        "Kullanım, dosya aktivitesi ve arama istatistiği raporları"
+      ],
+      "shotText": "Büronuz, cebinizde açılır.",
+      "shotUrl": "https://aylex.ai/"
+    },
+    {
+      "eyebrow": "Belge araçları",
+      "title": "Taslaktan imzaya sözleşme ve dilekçe",
+      "text": "Sözleşme üretici, dilekçe oluşturucu, belge dönüştürücü ve hukuki çeviri araçları taslak hazırlama sürecini kısaltır. Yapay zeka taslağı kurar, son kararı her zaman avukat verir.",
+      "bullets": [
+        "Temsil edilen tarafın gözünden madde madde sözleşme analizi",
+        "Kritik, yüksek ve orta diye derecelenen bulgular, Word ve PDF çıktısı",
+        "Beş adımlı sihirbazla 20 hukuk dalında atıflı dilekçe taslağı",
+        "Mevcut dilekçeyi puanlayan Dilekçe Analizi"
+      ],
+      "shotText": "İmzadan önce her şey hazır.",
+      "shotUrl": "https://aylex.ai/"
+    },
+    {
+      "eyebrow": "AyLex Tevkil",
+      "title": "81 ilde komisyonsuz görevlendirme ağı",
+      "text": "Avukat, yetişemediği şehirdeki duruşma, haciz, keşif, kalem, icra ve arabuluculuk işlerini baro kaydı teyitli bir meslektaşına devreder ya da bulunduğu ildeki görevleri üstlenir. Ağ, görev başına komisyon almaz.",
+      "bullets": [
+        "İl, adliye, iş tipi ve görev ücretiyle kısa formdan görev tanımı",
+        "Baro kaydı teyitli, çift yönlü puanlanan meslektaşlar",
+        "Yazışma, evrak ve durum takibi tek ekranda, kayıt altında",
+        "Duruşma tutanağı ve görev raporu aynı gün dosyada"
+      ],
+      "shotText": "Görevden rapora, dört adım.",
+      "shotUrl": "https://aylex.ai/tevkil"
+    }
+  ],
+  "audience": [
+    {
+      "title": "Bağımsız avukat",
+      "text": "Destek kadrosu olmayan avukata araştırma, yazım, hatırlatma ve takibi tek ekranda toplayan bir büro düzeni sunar."
+    },
+    {
+      "title": "Hukuk bürosu",
+      "text": "Dosya paylaşımı, görev atama ve ortak takvimle ekip çalışmasını tek düzende toplar; yapılan işler kayıtta kalır."
+    },
+    {
+      "title": "Kurumsal hukuk ekibi",
+      "text": "Şirket içi hukuk birimlerine raporlanabilir ve denetlenebilir bir çalışma katmanı sağlar."
+    }
+  ],
+  "trust": {
+    "title": "Güvenlik ve veri gizliliği",
+    "items": [
+      {
+        "title": "Sertifikalı altyapı",
+        "text": "Veriler, SOC 2 Type II ve ISO 27001 sertifikalı kurumsal bulut altyapısında tutulur."
+      },
+      {
+        "title": "Uçtan uca şifreleme",
+        "text": "Veriler durağan halde AES-256, aktarım sırasında TLS ile şifrelenir."
+      },
+      {
+        "title": "Trafik koruması",
+        "text": "Trafik küresel bir ağ üzerinden geçer; DDoS savunması, bot filtreleme ve saldırı istihbaratı sürekli devrededir."
+      },
+      {
+        "title": "Veri size aittir",
+        "text": "Dosya ve müvekkil verisi yapay zeka eğitiminde kullanılmaz, üçüncü tarafa aktarılmaz; erişimler iz kaydında tutulur."
+      }
+    ]
+  },
+  "facts": [
+    {
+      "label": "Kapsam",
+      "value": "10 bölümde 44 modül"
+    },
+    {
+      "label": "Tevkil ağı",
+      "value": "81 il, 6 görev tipi"
+    },
+    {
+      "label": "Entegrasyonlar",
+      "value": "UYAP, UETS, KEP, e-imza"
+    },
+    {
+      "label": "Kullanım kanalları",
+      "value": "Tarayıcı, PWA, Word, WhatsApp, Telegram"
+    }
+  ]
+}

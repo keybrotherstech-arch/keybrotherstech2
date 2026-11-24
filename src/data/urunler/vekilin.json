@@ -1,0 +1,132 @@
+{
+  "key": "vekilin",
+  "seoTitle": "Vekilin: TBMM ve Milletvekili Takibi | KeyBrothers Teknoloji",
+  "seoDescription": "Vekilin, milletvekillerinin TBMM'deki soru, teklif, oylama ve konuşmalarını kamuya açık kayıtlardan derleyip il il gösteren bağımsız bir platformdur.",
+  "h1": "Vekilin: TBMM ve milletvekili takip platformu",
+  "lead": "Vekilin, milletvekillerinin TBMM'deki çalışmalarını kamuya açık kayıtlardan derleyip sade bir dille gösteren bağımsız bir platformdur. İlini seçen herkes, vekillerinin Meclis'te ne yaptığını tek yerden izleyebilir.",
+  "highlights": [
+    {
+      "title": "Her bilgi kaynağına bağlı",
+      "text": "Bilgiler TBMM'nin kamuya açık kayıtlarından derlenir; her kayıttan asıl belgeye ya da tutanağa geçilir."
+    },
+    {
+      "title": "İl il Meclis haritası",
+      "text": "İl seçerek ya da isim, kanun, konu yazarak o ilin vekillerine ve ille ilgili kayıtlara ulaşılır."
+    },
+    {
+      "title": "Genel Kurul'dan anlık özet",
+      "text": "Ham tutanak oturum sırasında okunur, biten konuşmalar yapay zeka ile yorumsuz biçimde özetlenir."
+    },
+    {
+      "title": "Seçim simülasyonu",
+      "text": "Oy oranlarına göre 600 sandalyelik Meclis'in dağılımı ülke genelinde ve il il anında hesaplanır."
+    }
+  ],
+  "sections": [
+    {
+      "eyebrow": "İl il takip",
+      "title": "İlini seç, vekillerinin Meclis'te ne yaptığını gör",
+      "text": "Vekilin'de arama il seçimiyle başlar; isim, kanun ya da konu yazarak da sonuca ulaşılır. Ana sayfadaki Türkiye haritası, son 30 günde illerin vekil başına verdiği yazılı soru yoğunluğunu gösterir. İl sayfaları, başka illerin vekillerinin o il hakkında verdiği soruları ve yaptığı konuşmaları da bir araya getirir.",
+      "bullets": [
+        "81 ilin her biri için ayrı il sayfası",
+        "İsim, kanun ya da konu yazarak arama",
+        "Haritada il bazında vekil başına yazılı soru yoğunluğu",
+        "İlçe adları bağlı oldukları ille otomatik eşlenir"
+      ],
+      "shotText": "Meclis'in haritası",
+      "shotUrl": "https://vekilin.com/"
+    },
+    {
+      "eyebrow": "Yasama kayıtları",
+      "title": "Soru, teklif, kanun ve oylama tek yerde",
+      "text": "Yazılı soru önergeleri, kanun teklifleri, kanunlar, açık oylamalar ve Genel Kurul konuşmaları TBMM kayıtlarından derlenir. Her vekil için kayıtlara dayalı bir karne tutulur; açık oylamalarda kimin ne oy verdiği vekilin o günkü partisiyle gösterilir. Bakanlıkların yazılı soruları İçtüzükteki 15 günlük süre içinde cevaplayıp cevaplamadığı da izlenir.",
+      "bullets": [
+        "Önerge ve cevap metinleri TBMM belgelerinden okunur",
+        "Kanun teklifleri gerekçe ve madde metinlerine ayrılır",
+        "Açık oylamalarda vekil vekil oy dökümü",
+        "Bakanlık bazında süresinde, geç ve cevapsız soru oranları"
+      ],
+      "shotText": "28. Dönem rakamlarla",
+      "shotUrl": "https://vekilin.com/"
+    },
+    {
+      "eyebrow": "Genel Kurul",
+      "title": "Genel Kurul'u oturum sürerken takip",
+      "text": "Genel Kurul ham tutanağı oturum boyunca birkaç dakikada bir okunur ve konuşmacılara ayrılır. Biten her konuşmadan yapay zeka ile konu, ana noktalar ve metinden birebir bir alıntı çıkarılır; günün ana teması bu özetlerden derlenir. Meclis takvimi Genel Kurul, komisyon ve basın toplantılarını gün gün listeler.",
+      "bullets": [
+        "Yapay zeka yorum eklemez, iddiaları konuşmacının sözü olarak aktarır",
+        "Metinde birebir geçmeyen alıntı yayımlanmaz",
+        "Son dakikalar tutanak yayımlanınca tutanakla doğrulanır",
+        "Her özetten konuşmanın tam tutanak metnine geçilir"
+      ],
+      "shotText": "Püf noktaları ve günün teması nasıl hazırlanıyor?",
+      "shotUrl": "https://vekilin.com/yontem"
+    },
+    {
+      "eyebrow": "Seçim simülasyonu",
+      "title": "Oy oranlarına göre Meclis dağılımını hesaplayın",
+      "text": "Seçim simülasyonu, oy oranları değiştirildiğinde 600 sandalyelik Meclis'in yürürlükteki seçim kanunu kurallarıyla nasıl dağılacağını ülke genelinde ve il il anında hesaplar. Hazır senaryolar yalnız başlangıç noktasıdır, tahmin değildir. Cumhurbaşkanlığı seçiminin iki turu için ayrı bir simülasyon da bulunur.",
+      "bullets": [
+        "D'Hondt yöntemiyle 600 sandalye hesabı",
+        "İl ve seçim çevresi bazında harita ve elle ayar",
+        "Baraj ve ittifak seçenekleriyle senaryo kurma",
+        "Senaryo bağlantı, görsel ve kısa video olarak paylaşılabilir"
+      ],
+      "shotText": "Hangi ilde kim kazanıyor",
+      "shotUrl": "https://vekilin.com/secim-simulasyonu"
+    },
+    {
+      "eyebrow": "Bildirimler",
+      "title": "Takip edilen konularda anlık bildirim",
+      "text": "Takip edilen vekil soru ya da teklif verdiğinde, teklif komisyondan çıktığında ve kanun kabul edildiğinde telefona bildirim gönderilir. Bildirim için üyelik gerekmez, ad ya da e-posta istenmez. Vekilin, telefonun ana ekranına uygulama olarak da yüklenebilir.",
+      "bullets": [
+        "Genel Kurul'dan son dakika, kanun ve gündem bildirimleri",
+        "Birleşim bitince günün özeti",
+        "Vekil, teklif, komisyon ve il takibi",
+        "Gece saatleri için sessiz mod"
+      ],
+      "shotText": "Neyden haber almak istersiniz?",
+      "shotUrl": "https://vekilin.com/bildirimler"
+    }
+  ],
+  "audience": [],
+  "trust": {
+    "title": "Yöntem ve tarafsızlık",
+    "items": [
+      {
+        "title": "TBMM kaydına bağlı",
+        "text": "Her bilgi TBMM'nin kamuya açık kayıtlarından derlenir ve asıl belgeye bağlanır; esas olan TBMM'deki belgedir."
+      },
+      {
+        "title": "Bağımsız yayın",
+        "text": "Vekilin, TBMM'nin resmi sitesi değildir. Partiler sitede bilerek renksiz gösterilir."
+      },
+      {
+        "title": "Yapay zekaya açık kurallar",
+        "text": "Özetler yalnız söyleneni aktarır, yorum ya da değerlendirme sıfatı eklemez; partilerin görüşleri aynı tonda aktarılır."
+      },
+      {
+        "title": "Düzeltme ve sınırlar",
+        "text": "Hatalar düzeltme sayfasından bildirilir. Sayılar yalnız TBMM kayıtlarına yansıyan çalışmayı gösterir."
+      }
+    ]
+  },
+  "facts": [
+    {
+      "label": "Veri kaynağı",
+      "value": "TBMM'nin kamuya açık kayıtları"
+    },
+    {
+      "label": "Kapsam",
+      "value": "81 il, Genel Kurul ve komisyonlar"
+    },
+    {
+      "label": "Güncelleme",
+      "value": "Her gün, oturumda birkaç dakikada bir"
+    },
+    {
+      "label": "Geliştiren",
+      "value": "KeyBrothers Teknoloji"
+    }
+  ]
+}

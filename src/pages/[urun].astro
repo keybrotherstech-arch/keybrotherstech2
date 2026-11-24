@@ -1,0 +1,173 @@
+---
+// Ayrintili urun sayfasi: /aylex, /vekilin, /promptturk.
+// Metinler src/data/urunler/<urun>.json dosyasindan, goruntuler src/assets/urunler/<urun>/ klasorunden gelir.
+import BaseLayout from '../layouts/BaseLayout.astro';
+import BrowserFrame from '../components/BrowserFrame.astro';
+import ProductBrand from '../components/ProductBrand.astro';
+import ContactBand from '../components/ContactBand.astro';
+import { products } from '../data/site';
+import { shot, hasShot, detail } from '../data/media';
+
+export function getStaticPaths() {
+  return products.map((p) => ({ params: { urun: p.key } }));
+}
+
+const { urun } = Astro.params;
+const product = products.find((p) => p.key === urun)!;
+const d = detail(product.key);
+// Urunun ust goruntusu: varsa sitenin acilis ekrani, yoksa urun bloklarindaki ana goruntu.
+const heroName = `${product.key}/hero`;
+const mainShot = hasShot(heroName) ? shot(heroName) : shot(product.key);
+const others = products.filter((p) => p.key !== product.key);
+---
+<BaseLayout title={d.seoTitle} description={d.seoDescription} path={`/${product.key}`}>
+  <main id="icerik" class="pd" data-product={product.key}>
+    <section class="pd-hero">
+      <div class="wrap">
+        <nav class="crumbs" aria-label="Sayfa yolu">
+          <a href="/urunler">Ürünler</a>
+          <span aria-hidden="true">/</span>
+          <span aria-current="page">{product.name}</span>
+        </nav>
+        <div class="pd-hero__grid">
+          <div>
+            <ProductBrand product={product.key} />
+            <p class="product__category">{product.category}</p>
+            <h1>{d.h1}</h1>
+            <p class="pd-hero__lead">{d.lead}</p>
+            <div class="actions">
+              <a class="button button--primary" href={product.url}>
+                {product.domain} adresine gidin
+                <svg viewBox="0 0 16 16" aria-hidden="true" focusable="false"><path d="M4 12 12 4M6 4h6v6" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </a>
+              <a class="button button--secondary" href="/iletisim">Bize ulaşın</a>
+            </div>
+          </div>
+          <div class="pd-hero__visual">
+            <BrowserFrame address={product.domain} light={mainShot.light} dark={mainShot.dark} alt={product.shotAlt} sizes="(max-width: 1000px) 92vw, 620px" />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section--tight">
+      <div class="wrap">
+        <h2 class="visually-hidden">Öne çıkan özellikler</h2>
+        <div class="highlights">
+          {d.highlights.map((h) => (
+            <article class="highlight">
+              <h3>{h.title}</h3>
+              <p>{h.text}</p>
+            </article>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <section class="section section--subtle pd-sections">
+      <div class="wrap">
+        {d.sections.map((s, i) => {
+          const name = `${product.key}/${i + 1}`;
+          const image = hasShot(name) ? shot(name) : null;
+          return (
+            <article class:list={['feature', { 'feature--flip': i % 2 === 1, 'feature--text': !image }]}>
+              <div class="feature__copy">
+                <p class="product__category">{s.eyebrow}</p>
+                <h2>{s.title}</h2>
+                <p class="feature__text">{s.text}</p>
+                <ul class="product__features">
+                  {s.bullets.map((b) => <li>{b}</li>)}
+                </ul>
+              </div>
+              {image && (
+                <div class="feature__visual">
+                  <BrowserFrame address={product.domain} light={image.light} dark={image.dark} alt={`${product.name}: ${s.title} bölümünün ekran görüntüsü`} sizes="(max-width: 1000px) 92vw, 620px" />
+                </div>
+              )}
+            </article>
+          );
+        })}
+      </div>
+    </section>
+
+    {d.audience.length > 0 && (
+      <section class="section">
+        <div class="wrap">
+          <div class="section__heading">
+            <h2>Kimler için</h2>
+          </div>
+          <div class:list={['cards', `cards--${d.audience.length}`]}>
+            {d.audience.map((a) => (
+              <article class="card card--plain">
+                <h3>{a.title}</h3>
+                <p>{a.text}</p>
+              </article>
+            ))}
+          </div>
+        </div>
+      </section>
+    )}
+
+    {d.trust && (
+      <section class:list={['section', { 'section--subtle': d.audience.length > 0 }]}>
+        <div class="wrap why">
+          <h2>{d.trust.title}</h2>
+          <div class="reasons">
+            {d.trust.items.map((t) => (
+              <article class="reason">
+                <h3>{t.title}</h3>
+                <p>{t.text}</p>
+              </article>
+            ))}
+          </div>
+        </div>
+      </section>
+    )}
+
+    {d.facts.length > 0 && (
+      <section class="section section--tight">
+        <div class="wrap">
+          <h2 class="visually-hidden">Kısa bilgiler</h2>
+          <dl class="facts">
+            {d.facts.map((f) => (
+              <div>
+                <dt>{f.label}</dt>
+                <dd>{f.value}</dd>
+              </div>
+            ))}
+          </dl>
+        </div>
+      </section>
+    )}
+
+    <section class="section section--tight">
+      <div class="wrap">
+        <div class="pd-cta">
+          <div>
+            <h2>{product.name} kendi sitesinde.</h2>
+            <p>Ürünü denemek ve güncel bilgiye ulaşmak için {product.domain} adresini ziyaret edin.</p>
+          </div>
+          <a class="button button--primary" href={product.url}>
+            {product.domain}
+            <svg viewBox="0 0 16 16" aria-hidden="true" focusable="false"><path d="M4 12 12 4M6 4h6v6" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </a>
+        </div>
+        <div class="other-products">
+          <p class="site-footer__heading">Diğer ürünlerimiz</p>
+          <ul>
+            {others.map((o) => (
+              <li>
+                <a href={`/${o.key}`}>
+                  <strong>{o.name}</strong>
+                  <span>{o.category}</span>
+                </a>
+              </li>
+            ))}
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <ContactBand />
+  </main>
+</BaseLayout>

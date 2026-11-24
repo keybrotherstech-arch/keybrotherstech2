@@ -1,0 +1,160 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import PageHeader from '../components/PageHeader.astro';
+import { site } from '../data/site';
+---
+<BaseLayout
+  title="KVKK Aydınlatma Metni | KeyBrothers Teknoloji"
+  description="KeyBrothers Teknoloji’nin keybrotherstech.com sitesi ziyaretçileri ve şirketle iletişime geçen kişiler için kişisel verilerin korunması aydınlatma metni."
+  path="/kvkk-aydinlatma-metni"
+>
+  <main id="icerik">
+    <PageHeader eyebrow="Yasal" title="KVKK Aydınlatma Metni" lead="Son güncelleme: 24 Kasım 2026" />
+
+    <section class="section section--after-header">
+      <div class="wrap prose">
+        <p>
+          Bu metin, 6698 sayılı Kişisel Verilerin Korunması Kanunu’nun (“Kanun”) 10. maddesi
+          uyarınca, keybrotherstech.com sitesini ziyaret eden ve şirketimizle iletişime geçen
+          kişileri bilgilendirmek için hazırlanmıştır. AyLex, Vekilin ve PromptTurk ürünlerinin
+          kendi sitelerinde o ürünlere özgü ayrı aydınlatma metinleri bulunur; bu metin yalnız
+          keybrotherstech.com için geçerlidir.
+        </p>
+
+        <h2>1. Veri sorumlusu</h2>
+        <p>
+          Kişisel verileriniz, veri sorumlusu sıfatıyla {site.legalName} (“Şirket”) tarafından
+          işlenir.
+        </p>
+        <dl class="company">
+          <div><dt>Adres</dt><dd>{site.address.oneLine}</dd></div>
+          <div><dt>MERSİS</dt><dd>{site.registry.mersis}</dd></div>
+          <div><dt>KEP</dt><dd>{site.registry.kep}</dd></div>
+          <div><dt>E-posta</dt><dd><a href={`mailto:${site.email}`}>{site.email}</a></dd></div>
+        </dl>
+
+        <h2>2. İşlenen kişisel veriler</h2>
+        <ul>
+          <li>
+            <strong>İletişim bilgileri:</strong> Bize e-posta gönderdiğinizde ya da telefonla
+            aradığınızda paylaştığınız ad, soyad, e-posta adresi, telefon numarası ve çalıştığınız
+            kurum bilgisi.
+          </li>
+          <li>
+            <strong>Talep içeriği:</strong> Mesajınızda ya da görüşmede kendi isteğinizle
+            ilettiğiniz bilgiler.
+          </li>
+          <li>
+            <strong>İşlem güvenliği bilgileri:</strong> Siteyi ziyaret ettiğinizde barındırma
+            altyapısının teknik olarak kaydettiği IP adresi, tarayıcı ve cihaz bilgisi, erişim
+            tarihi ve saati.
+          </li>
+        </ul>
+        <p>
+          Sitede üyelik, form ya da ödeme adımı yoktur. Özel nitelikli kişisel veri talep etmeyiz;
+          bu tür verileri bize iletmemenizi rica ederiz.
+        </p>
+
+        <h2>3. Kişisel verilerin işlenme amaçları</h2>
+        <ul>
+          <li>Taleplerinizi yanıtlamak ve sizinle iletişim kurmak</li>
+          <li>Teklif ve sözleşme süreçlerini yürütmek</li>
+          <li>Sitenin güvenliğini ve kesintisiz çalışmasını sağlamak</li>
+          <li>Hukuki yükümlülükleri yerine getirmek ve yetkili kurumların taleplerini karşılamak</li>
+        </ul>
+
+        <h2>4. İşlemenin hukuki sebepleri</h2>
+        <p>Kişisel verileriniz, Kanun’un 5. maddesinin 2. fıkrasındaki şu hukuki sebeplere dayanılarak işlenir:</p>
+        <ul>
+          <li>Bir sözleşmenin kurulması veya ifasıyla doğrudan doğruya ilgili olması (5/2-c)</li>
+          <li>Veri sorumlusunun hukuki yükümlülüğünü yerine getirebilmesi için zorunlu olması (5/2-ç)</li>
+          <li>Bir hakkın tesisi, kullanılması veya korunması için zorunlu olması (5/2-e)</li>
+          <li>
+            İlgili kişinin temel hak ve özgürlüklerine zarar vermemek kaydıyla, veri sorumlusunun
+            meşru menfaatleri için zorunlu olması (5/2-f)
+          </li>
+        </ul>
+        <p>Açık rıza gerektiren bir işleme yapılacaksa rızanız ayrıca alınır.</p>
+
+        <h2>5. Kişisel verilerin toplanma yöntemi</h2>
+        <p>
+          İletişim bilgileriniz ve talep içeriğiniz, bize e-posta ya da telefonla ulaştığınızda
+          doğrudan sizden; işlem güvenliği bilgileri ise siteyi ziyaret ettiğinizde otomatik
+          yollarla toplanır.
+        </p>
+
+        <h2>6. Kişisel verilerin aktarılması</h2>
+        <p>Kişisel verileriniz, yukarıdaki amaçlarla sınırlı olarak şu taraflara aktarılabilir:</p>
+        <ul>
+          <li>Barındırma ve e-posta gibi teknik hizmet aldığımız tedarikçiler</li>
+          <li>Hukuken yetkili kamu kurum ve kuruluşları ile yargı mercileri</li>
+          <li>Hukuki ve mali süreçlerde hizmet aldığımız danışmanlar</li>
+        </ul>
+        <p>
+          Site, sunucuları yurt dışında da bulunan Cloudflare altyapısı üzerinden yayınlanır. Bu
+          nedenle teknik erişim kayıtları yurt dışındaki sunucularda işlenebilir. Yurt dışına
+          aktarım, Kanun’un 9. maddesindeki şartlara uygun olarak yapılır. Kişisel verileriniz
+          pazarlama amacıyla üçüncü kişilere satılmaz ve kiralanmaz.
+        </p>
+
+        <h2>7. Saklama süresi</h2>
+        <p>
+          Kişisel verileriniz, işleme amacının gerektirdiği süre ve ilgili mevzuatta öngörülen
+          saklama ve zamanaşımı süreleri boyunca saklanır. Bu sürelerin sonunda silinir, yok edilir
+          ya da anonim hale getirilir.
+        </p>
+
+        <h2>8. Haklarınız</h2>
+        <p>Kanun’un 11. maddesi uyarınca Şirket’e başvurarak şu haklarınızı kullanabilirsiniz:</p>
+        <ul>
+          <li>Kişisel verilerinizin işlenip işlenmediğini öğrenme</li>
+          <li>İşlenmişse buna ilişkin bilgi talep etme</li>
+          <li>İşlenme amacını ve verilerin amacına uygun kullanılıp kullanılmadığını öğrenme</li>
+          <li>Yurt içinde veya yurt dışında verilerin aktarıldığı üçüncü kişileri bilme</li>
+          <li>Eksik veya yanlış işlenmişse düzeltilmesini isteme</li>
+          <li>Kanun’un 7. maddesindeki şartlar çerçevesinde silinmesini veya yok edilmesini isteme</li>
+          <li>
+            Düzeltme, silme ve yok etme işlemlerinin, verilerin aktarıldığı üçüncü kişilere
+            bildirilmesini isteme
+          </li>
+          <li>
+            İşlenen verilerin münhasıran otomatik sistemler vasıtasıyla analiz edilmesi suretiyle
+            aleyhinize bir sonucun ortaya çıkmasına itiraz etme
+          </li>
+          <li>
+            Verilerinizin kanuna aykırı işlenmesi sebebiyle zarara uğramanız hâlinde zararın
+            giderilmesini talep etme
+          </li>
+        </ul>
+
+        <h2>9. Başvuru yolu</h2>
+        <p>Başvurunuzu şu yollardan biriyle iletebilirsiniz:</p>
+        <ul>
+          <li>Yazılı olarak: {site.address.oneLine}</li>
+          <li>Kayıtlı elektronik posta (KEP) ile: {site.registry.kep}</li>
+          <li>
+            Daha önce bize bildirdiğiniz ve kayıtlarımızda bulunan e-posta adresinizden:
+            <a href={`mailto:${site.email}`}>{site.email}</a>
+          </li>
+        </ul>
+        <p>
+          Başvurunuzda kimliğinizi doğrulamaya yarayan bilgiler ile talebinizin konusu yer
+          almalıdır. Başvurular, talebin niteliğine göre en kısa sürede ve en geç otuz gün içinde
+          ücretsiz olarak sonuçlandırılır. İşlemin ayrıca bir maliyet gerektirmesi hâlinde Kişisel
+          Verileri Koruma Kurulu’nun belirlediği tarifedeki ücret alınabilir.
+        </p>
+        <p>
+          Başvurunuzun reddedilmesi, verilen cevabı yetersiz bulmanız ya da süresinde cevap
+          verilmemesi hâlinde, cevabı öğrendiğiniz tarihten itibaren otuz gün ve her hâlde başvuru
+          tarihinden itibaren altmış gün içinde Kişisel Verileri Koruma Kurulu’na şikâyette
+          bulunabilirsiniz.
+        </p>
+
+        <p class="prose__note">
+          Sitenin çerez ve teknik veri kullanımı için
+          <a href="/gizlilik-politikasi">Gizlilik ve Çerez Politikası</a>’na bakabilirsiniz.
+        </p>
+      </div>
+    </section>
+  </main>
+</BaseLayout>

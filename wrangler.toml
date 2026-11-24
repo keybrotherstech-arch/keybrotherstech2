@@ -1,6 +1,13 @@
 name = "keybrotherstech2"
-compatibility_date = "2026-04-10"
+compatibility_date = "2026-11-20"
 
+# Yalniz statik dosyalar: Astro ciktisi dist/ klasorunden sunulur.
+# (Depo koku sunulmadigi icin .git, wrangler.toml vb. disari acilmaz.)
 [assets]
-directory = "."
-exclude = [".git", ".wrangler", "wrangler.toml", ".gitignore"]
+directory = "./dist"
+not_found_handling = "404-page"
+html_handling = "auto-trailing-slash"
+
+# Yerelde `npx wrangler deploy` oncesi cikti uretir.
+[build]
+command = "npm run build"

@@ -1,0 +1,79 @@
+---
+import { Font } from 'astro:assets';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import { site, products } from '../data/site';
+import '../styles/site.css';
+
+interface Props {
+  title: string;
+  description: string;
+  path: string;
+  noindex?: boolean;
+}
+
+const { title, description, path, noindex = false } = Astro.props;
+const canonical = new URL(path, site.url).href;
+const ogImage = new URL('/web-app-manifest-512x512.png', site.url).href;
+
+const organization = {
+  '@context': 'https://schema.org',
+  '@type': 'Organization',
+  name: site.name,
+  legalName: site.legalName,
+  url: site.url,
+  logo: ogImage,
+  email: site.email,
+  telephone: site.phone.href.replace('tel:', ''),
+  address: {
+    '@type': 'PostalAddress',
+    streetAddress: site.address.street,
+    postalCode: site.address.postalCode,
+    addressLocality: site.address.district,
+    addressRegion: site.address.city,
+    addressCountry: site.address.country,
+  },
+  brand: products.map((p) => ({ '@type': 'Brand', name: p.name, url: p.url })),
+};
+---
+<!doctype html>
+<html lang="tr">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <link rel="canonical" href={canonical} />
+    {noindex && <meta name="robots" content="noindex" />}
+    <meta name="theme-color" content="#ffffff" />
+    <meta name="color-scheme" content="light dark" />
+    <!-- Tema, sayfa cizilmeden once ayarlanir. Dosya olarak durur: guvenlik basliklari satir ici betige izin vermez. -->
+    <script is:inline src="/tema.js"></script>
+
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content={site.name} />
+    <meta property="og:locale" content={site.locale} />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content={canonical} />
+    <meta property="og:image" content={ogImage} />
+    <meta name="twitter:card" content="summary" />
+
+    <link rel="icon" href="/favicon.ico" sizes="32x32" />
+    <link rel="icon" href="/favicon-96x96.png" type="image/png" sizes="96x96" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+    <link rel="manifest" href="/site.webmanifest" />
+
+    <Font cssVariable="--font-inter" preload />
+    <Font cssVariable="--font-poppins" />
+    <Font cssVariable="--font-schibsted" />
+
+    <script type="application/ld+json" is:inline set:html={JSON.stringify(organization)} />
+  </head>
+  <body>
+    <a class="skip-link" href="#icerik">İçeriğe geç</a>
+    <Header />
+    <slot />
+    <Footer />
+  </body>
+</html>

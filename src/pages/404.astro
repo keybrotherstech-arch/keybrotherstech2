@@ -1,0 +1,23 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import PageHeader from '../components/PageHeader.astro';
+---
+<BaseLayout
+  title="Sayfa bulunamadı | KeyBrothers Teknoloji"
+  description="Aradığınız sayfa bulunamadı."
+  path="/404"
+  noindex
+>
+  <main id="icerik">
+    <PageHeader
+      eyebrow="404"
+      title="Sayfa bulunamadı."
+      lead="Aradığınız sayfa taşınmış ya da kaldırılmış olabilir."
+    >
+      <div class="actions">
+        <a class="button button--primary" href="/">Ana sayfaya dönün</a>
+        <a class="button button--secondary" href="/urunler">Ürünlerimiz</a>
+      </div>
+    </PageHeader>
+  </main>
+</BaseLayout>

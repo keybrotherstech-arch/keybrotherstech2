@@ -1,0 +1,95 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import PageHeader from '../components/PageHeader.astro';
+import { site, products } from '../data/site';
+---
+<BaseLayout
+  title="Gizlilik ve Çerez Politikası | KeyBrothers Teknoloji"
+  description="keybrotherstech.com sitesinin gizlilik ve çerez politikası: hangi teknik veriler işlenir, çerez kullanılır mı, tema tercihi nerede saklanır."
+  path="/gizlilik-politikasi"
+>
+  <main id="icerik">
+    <PageHeader eyebrow="Yasal" title="Gizlilik ve Çerez Politikası" lead="Son güncelleme: 24 Kasım 2026" />
+
+    <section class="section section--after-header">
+      <div class="wrap prose">
+        <p>
+          Bu politika, {site.legalName} (“Şirket”) tarafından işletilen keybrotherstech.com sitesi
+          için geçerlidir. Kişisel verilerinizin işlenmesine ilişkin ayrıntılar
+          <a href="/kvkk-aydinlatma-metni">KVKK Aydınlatma Metni</a>’nde yer alır.
+        </p>
+
+        <h2>1. Siteyi ziyaret ettiğinizde</h2>
+        <p>
+          Bu site bir tanıtım sitesidir. Üyelik, form ya da ödeme adımı içermez; siteyi gezmek
+          için kişisel bilgi vermeniz gerekmez.
+        </p>
+        <p>
+          Her internet sitesinde olduğu gibi, sayfaların size ulaştırılabilmesi için barındırma
+          altyapısı bazı teknik bilgileri kaydeder: IP adresi, tarayıcı ve cihaz bilgisi, erişim
+          tarihi ve saati. Bu kayıtlar sitenin güvenliği ve kesintisiz çalışması için tutulur.
+        </p>
+
+        <h2>2. Bizimle iletişime geçtiğinizde</h2>
+        <p>
+          Bize e-posta gönderdiğinizde ya da telefonla aradığınızda paylaştığınız bilgileri yalnız
+          talebinizi yanıtlamak ve sizinle iletişim kurmak için kullanırız.
+        </p>
+
+        <h2>3. Çerezler</h2>
+        <p>
+          Bu site çerez kullanmaz. Sitede reklam, ziyaretçi analizi ya da sosyal medya izleme
+          aracı yoktur; bu nedenle çerez onayı penceresi de gösterilmez.
+        </p>
+        <p>
+          Sitenin yayınlandığı Cloudflare altyapısı, saldırı şüphesi gibi istisnai durumlarda
+          yalnız güvenlik amacıyla zorunlu bir çerez yerleştirebilir. Bu çerez sizi tanımak ya da
+          izlemek için kullanılmaz.
+        </p>
+
+        <h2>4. Tema tercihi</h2>
+        <p>
+          Sitenin sağ üstündeki düğmeyle koyu ya da açık temayı seçebilirsiniz. Seçiminiz yalnız
+          tarayıcınızın yerel deposunda (“kb-tema” adıyla) tutulur; sunucularımıza gönderilmez ve
+          sizi tanımlamak için kullanılmaz. Tarayıcınızın site verilerini temizleyerek bu kaydı
+          silebilirsiniz.
+        </p>
+
+        <h2>5. Üçüncü taraf içerikler</h2>
+        <p>
+          Sitedeki yazı tipleri ve görseller sitenin kendi sunucusundan gelir. Sayfalar açılırken
+          tarayıcınız başka bir şirketin sunucusuna istek göndermez.
+        </p>
+
+        <h2>6. Diğer sitelere bağlantılar</h2>
+        <p>
+          Bu sitede ürünlerimizin kendi sitelerine bağlantılar bulunur:
+          {products.map((p, i) => (
+            <>
+              <a href={p.url}>{p.domain}</a>{i < products.length - 2 ? ', ' : i === products.length - 2 ? ' ve ' : '.'}
+            </>
+          ))}
+          Bu sitelerin her birinin kendi gizlilik ve çerez politikası vardır; oralarda o
+          politikalar geçerlidir.
+        </p>
+
+        <h2>7. Güvenlik</h2>
+        <p>
+          Site ile tarayıcınız arasındaki bağlantı şifrelidir (HTTPS). Bize ilettiğiniz bilgilere
+          yalnız işi gereği erişmesi gereken kişiler erişir.
+        </p>
+
+        <h2>8. Değişiklikler</h2>
+        <p>
+          Bu politika, sitede yapılan değişikliklere ya da mevzuata bağlı olarak güncellenebilir.
+          Güncel metin her zaman bu sayfada yayınlanır.
+        </p>
+
+        <h2>9. İletişim</h2>
+        <p>
+          Sorularınız için <a href={`mailto:${site.email}`}>{site.email}</a> adresine yazabilirsiniz.
+        </p>
+      </div>
+    </section>
+  </main>
+</BaseLayout>

@@ -1,0 +1,18 @@
+---
+// KeyBrothers logosu: isaret asil logo dosyasindan alinmistir (yeniden cizilmez).
+// Yanina sirket adi "KeyBrothers Teknoloji" yazilir (logodaki yazi tipiyle, Poppins).
+import ThemeImage from './ThemeImage.astro';
+import markBlack from '../assets/logolar/kb-isaret-siyah.png';
+import markWhite from '../assets/logolar/kb-isaret-beyaz.png';
+import { site } from '../data/site';
+
+interface Props {
+  label: string;
+}
+
+const { label } = Astro.props;
+---
+<a class="brand" href="/" aria-label={label}>
+  <ThemeImage light={markBlack} dark={markWhite} alt="" width={38} loading="eager" class="brand__mark" />
+  <span class="brand__name">{site.name}</span>
+</a>
