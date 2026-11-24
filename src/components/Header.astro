@@ -1,0 +1,41 @@
+---
+// Ust menu. Butun sayfalarda ayni dosya kullanilir.
+---
+<header class="site-header">
+  <div class="container site-header__inner">
+    <a class="brand" href="/" aria-label="KeyBrothers Teknoloji, ana sayfa">
+      <svg viewBox="0 0 32 32" aria-hidden="true" focusable="false">
+        <path fill="currentColor" d="M3 4h24.6L3 26.2z"/>
+        <path fill="currentColor" d="M29 5.4V29H6.4z"/>
+      </svg>
+      <span>KeyBrothers Teknoloji</span>
+    </a>
+
+    <nav class="nav-desktop" aria-label="Ana menü">
+      <ul>
+        <li><a class="nav-link" href="/#aylex">AyLex</a></li>
+        <li><a class="nav-link" href="/#hizmetler">Hizmetler</a></li>
+        <li><a class="nav-link" href="/#hakkimizda">Hakkımızda</a></li>
+        <li><a class="nav-link" href="/#iletisim">İletişim</a></li>
+      </ul>
+    </nav>
+
+    <a class="button button--primary header-cta" href="/#iletisim">İletişime geçin</a>
+
+    <details class="nav-mobile">
+      <summary>
+        <svg viewBox="0 0 16 16" aria-hidden="true" focusable="false"><path d="M1 5h14M1 11h14" stroke="currentColor" stroke-width="1.5" fill="none"/></svg>
+        <span class="when-closed">Menü</span><span class="when-open">Kapat</span>
+      </summary>
+      <nav class="nav-mobile__panel" aria-label="Ana menü (mobil)">
+        <ul>
+          <li><a href="/#aylex">AyLex</a></li>
+          <li><a href="/#hizmetler">Hizmetler</a></li>
+          <li><a href="/#hakkimizda">Hakkımızda</a></li>
+          <li><a href="/#iletisim">İletişim</a></li>
+        </ul>
+        <a class="button button--primary" href="/#iletisim">İletişime geçin</a>
+      </nav>
+    </details>
+  </div>
+</header>

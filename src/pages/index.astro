@@ -1,0 +1,246 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import aylexLogo from '../assets/aylex-logo-white.png';
+import { site } from '../data/site';
+---
+<BaseLayout
+  title={`${site.name} — ${site.tagline}`}
+  description={site.description}
+  path="/"
+>
+<main id="icerik">
+
+  <!-- Hero -->
+  <section class="hero" aria-labelledby="hero-baslik">
+    <div class="container">
+      <p class="label label--marked">Ankara · Yazılım ve yapay zeka</p>
+      <h1 class="hero__title" id="hero-baslik">Kendi ürününü geliştiren yazılım şirketi.</h1>
+
+      <div class="hero__body grid">
+        <nav class="toc" aria-label="Bu sayfada">
+          <p class="label">Bu sayfada</p>
+          <ol class="toc__list">
+            <li><a href="#aylex"><span class="toc__num">01</span><span>AyLex</span><svg viewBox="0 0 16 16" aria-hidden="true" focusable="false"><path d="M8 2v11M3.5 8.5 8 13l4.5-4.5" stroke="currentColor" stroke-width="1.5" fill="none"/></svg></a></li>
+            <li><a href="#hizmetler"><span class="toc__num">02</span><span>Hizmetler</span><svg viewBox="0 0 16 16" aria-hidden="true" focusable="false"><path d="M8 2v11M3.5 8.5 8 13l4.5-4.5" stroke="currentColor" stroke-width="1.5" fill="none"/></svg></a></li>
+            <li><a href="#surec"><span class="toc__num">03</span><span>Nasıl çalışıyoruz</span><svg viewBox="0 0 16 16" aria-hidden="true" focusable="false"><path d="M8 2v11M3.5 8.5 8 13l4.5-4.5" stroke="currentColor" stroke-width="1.5" fill="none"/></svg></a></li>
+            <li><a href="#hakkimizda"><span class="toc__num">04</span><span>Hakkımızda</span><svg viewBox="0 0 16 16" aria-hidden="true" focusable="false"><path d="M8 2v11M3.5 8.5 8 13l4.5-4.5" stroke="currentColor" stroke-width="1.5" fill="none"/></svg></a></li>
+            <li><a href="#iletisim"><span class="toc__num">05</span><span>İletişim</span><svg viewBox="0 0 16 16" aria-hidden="true" focusable="false"><path d="M8 2v11M3.5 8.5 8 13l4.5-4.5" stroke="currentColor" stroke-width="1.5" fill="none"/></svg></a></li>
+          </ol>
+        </nav>
+
+        <div class="hero__copy">
+          <p class="standfirst">KeyBrothers Teknoloji, avukatlar için hukuk platformu AyLex'i geliştiriyor. Aynı ürün disipliniyle kamu ve özel sektör kurumlarına yazılım ve yapay zeka çözümleri üretiyoruz.</p>
+          <div class="button-row">
+            <a class="button button--primary" href="#aylex">AyLex'i inceleyin
+              <svg viewBox="0 0 16 16" aria-hidden="true" focusable="false"><path d="M2 8h11M8.5 3.5 13 8l-4.5 4.5" stroke="currentColor" stroke-width="1.5" fill="none"/></svg>
+            </a>
+            <a class="button button--secondary" href="#iletisim">Bize ulaşın</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 01 AyLex: sayfanın tek koyu bloğu -->
+  <section class="aylex" id="aylex" data-theme="dark" data-product="aylex" aria-labelledby="aylex-baslik">
+    <div class="container">
+      <div class="aylex__masthead">
+        <img class="aylex__logo" src={aylexLogo.src} width="500" height="362" alt="AyLex Legal Solutions">
+        <div class="aylex__meta">
+          <span class="rail__num" aria-hidden="true">01</span>
+          <p class="label">Ürünümüz · Hukuk teknolojisi</p>
+        </div>
+      </div>
+
+      <h2 class="aylex__title" id="aylex-baslik">AyLex: hukukun her aracı, tek platformda.</h2>
+
+      <div class="aylex__split">
+        <div class="aylex__copy">
+          <p class="aylex__text">AyLex, içtihat aramadan dosya takibine, tevkilden UYAP entegrasyonuna kadar bir avukatın gündelik araçlarını tek ekranda toplar. Yapay zeka taslağı kurar; son söz her zaman avukattadır.</p>
+          <div class="aylex__actions">
+            <p class="label aylex__info">44 modül · Web, Word, Chrome, WhatsApp ve Telegram</p>
+            <div class="button-row">
+              <a class="button button--primary" href="https://aylex.ai" rel="noopener">aylex.ai'yi ziyaret edin
+                <svg viewBox="0 0 16 16" aria-hidden="true" focusable="false"><path d="M4 12 12 4M5.5 4H12v6.5" stroke="currentColor" stroke-width="1.5" fill="none"/></svg>
+              </a>
+              <a class="button button--secondary" href="#aylex-ozellikler">Ürünü inceleyin</a>
+            </div>
+          </div>
+        </div>
+
+        <figure class="screen">
+          <figcaption class="label screen__caption">Temsili ekran</figcaption>
+          <div class="screen__frame" role="img" aria-label="Temsili AyLex arama ekranı: arama kutusunda “kira uyarlama emsal ölçütleri” yazıyor; altında İçtihat, Mevzuat ve Özelge etiketli üç sonuç satırı var.">
+            <div class="screen__side">
+              <span class="screen__brand">AyLex</span>
+              <span class="screen__nav-item screen__nav-item--active">İçtihat arama</span>
+              <span class="screen__nav-item">Dosya takibi</span>
+              <span class="screen__nav-item">Tevkil</span>
+              <span class="screen__nav-item">UYAP</span>
+            </div>
+            <div class="screen__main">
+              <div class="screen__search">
+                <svg viewBox="0 0 18 18" aria-hidden="true" focusable="false"><circle cx="7.5" cy="7.5" r="5" stroke="currentColor" stroke-width="1.5" fill="none"/><path d="m11.5 11.5 4.5 4.5" stroke="currentColor" stroke-width="1.5" fill="none"/></svg>
+                <span class="screen__query">kira uyarlama emsal ölçütleri</span>
+                <span class="screen__go">Ara</span>
+              </div>
+              <div>
+                <div class="result">
+                  <span class="tag">İÇTİHAT</span>
+                  <span class="bars"><i class="bar bar--title w-75"></i><i class="bar w-95"></i><i class="bar w-85"></i><i class="bar bar--cite"></i></span>
+                </div>
+                <div class="result">
+                  <span class="tag">MEVZUAT</span>
+                  <span class="bars"><i class="bar bar--title w-55"></i><i class="bar w-95"></i><i class="bar w-65"></i><i class="bar bar--cite"></i></span>
+                </div>
+                <div class="result">
+                  <span class="tag">ÖZELGE</span>
+                  <span class="bars"><i class="bar bar--title w-65"></i><i class="bar w-85"></i><i class="bar w-75"></i><i class="bar bar--cite"></i></span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </figure>
+      </div>
+
+      <ul class="aylex__points" id="aylex-ozellikler">
+        <li class="point">
+          <h3 class="point__title">Kaynak gösteren yapay zeka asistanı</h3>
+          <p class="point__text">Her yanıt içtihat ve mevzuat atıflı.</p>
+        </li>
+        <li class="point">
+          <h3 class="point__title">81 ilde tevkil ağı</h3>
+          <p class="point__text">Ücretsiz ve komisyonsuz.</p>
+        </li>
+        <li class="point">
+          <h3 class="point__title">Resmi sistemlerle entegre</h3>
+          <p class="point__text">UYAP, UETS, KEP ve <span class="nowrap">e-imza.</span></p>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- 02 Hizmetler -->
+  <section class="section" id="hizmetler" aria-labelledby="hizmetler-baslik">
+    <div class="container grid">
+      <header class="rail">
+        <span class="rail__num" aria-hidden="true">02</span>
+        <h2 class="rail__title" id="hizmetler-baslik">Hizmetler</h2>
+      </header>
+      <ol class="content">
+        <li class="row">
+          <span class="row__num" aria-hidden="true">2.1</span>
+          <h3 class="row__title">SaaS Ürün Geliştirme</h3>
+          <p class="row__text">Bulut tabanlı, ölçeklenebilir ürünleri fikirden yayına tasarlıyor ve geliştiriyoruz.</p>
+        </li>
+        <li class="row">
+          <span class="row__num" aria-hidden="true">2.2</span>
+          <h3 class="row__title">Yapay Zeka ve Otomasyon</h3>
+          <p class="row__text">İş süreçlerini hızlandıran yapay zeka ve otomasyon çözümleri kuruyoruz.</p>
+        </li>
+        <li class="row">
+          <span class="row__num" aria-hidden="true">2.3</span>
+          <h3 class="row__title">Pazarlama Teknolojileri</h3>
+          <p class="row__text">Kampanya yönetimi ve içerik optimizasyonu için araçlar tasarlıyoruz.</p>
+        </li>
+        <li class="row">
+          <span class="row__num" aria-hidden="true">2.4</span>
+          <h3 class="row__title">Dijital Medya ve Oyun</h3>
+          <p class="row__text">Etkileşimli deneyimler ve oyunlaştırma kurguları üzerinde çalışıyoruz.</p>
+        </li>
+      </ol>
+    </div>
+  </section>
+
+  <!-- 03 Nasıl çalışıyoruz -->
+  <section class="section" id="surec" aria-labelledby="surec-baslik">
+    <div class="container grid">
+      <header class="rail">
+        <span class="rail__num" aria-hidden="true">03</span>
+        <h2 class="rail__title" id="surec-baslik">Nasıl çalışıyoruz</h2>
+      </header>
+      <ol class="content steps">
+        <li class="step">
+          <span class="step__num" aria-hidden="true">1</span>
+          <h3 class="step__title">Keşif</h3>
+          <p class="step__text">İhtiyacı ve kapsamı birlikte netleştiririz.</p>
+        </li>
+        <li class="step">
+          <span class="step__num" aria-hidden="true">2</span>
+          <h3 class="step__title">Tasarım</h3>
+          <p class="step__text">Akışı ve arayüzü, geliştirmeden önce görünür kılarız.</p>
+        </li>
+        <li class="step">
+          <span class="step__num" aria-hidden="true">3</span>
+          <h3 class="step__title">Geliştirme</h3>
+          <p class="step__text">Kısa döngülerle ilerler, her adımı sizinle paylaşırız.</p>
+        </li>
+        <li class="step">
+          <span class="step__num" aria-hidden="true">4</span>
+          <h3 class="step__title">Yayın ve destek</h3>
+          <p class="step__text">Yayından sonra da ürünün başında kalırız.</p>
+        </li>
+      </ol>
+    </div>
+  </section>
+
+  <!-- 04 Hakkımızda: Neden biz -->
+  <section class="section" id="hakkimizda" aria-labelledby="neden-baslik">
+    <div class="container grid">
+      <div class="rail">
+        <span class="rail__num" aria-hidden="true">04</span>
+        <p class="rail__title">Hakkımızda</p>
+      </div>
+      <div class="content">
+        <h2 class="label label--marked" id="neden-baslik">Neden biz</h2>
+        <div class="why">
+          <article class="why__item why__item--lead">
+            <h3 class="kicker">Kendi ürünümüzü işletiyoruz</h3>
+            <p class="why__statement">Yazılımı teslim edip bırakmayı değil, yaşatmayı biliyoruz.</p>
+          </article>
+          <div class="why__side">
+            <article class="why__item">
+              <h3 class="kicker">Şeffaf süreç</h3>
+              <p class="why__statement">Kapsam, takvim ve ilerleme baştan sona açıktır.</p>
+            </article>
+            <article class="why__item">
+              <h3 class="kicker">Uzun vadeli bakım</h3>
+              <p class="why__statement">Yayın sonrası destek ve geliştirme işin parçasıdır.</p>
+            </article>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 05 İletişim -->
+  <section class="section contact" id="iletisim" aria-labelledby="iletisim-baslik">
+    <div class="container grid">
+      <div class="rail">
+        <span class="rail__num" aria-hidden="true">05</span>
+        <p class="rail__title">İletişim</p>
+      </div>
+      <div class="content">
+        <h2 class="contact__title" id="iletisim-baslik">Projenizi konuşalım.</h2>
+        <p class="standfirst">İlk görüşmede ihtiyacı dinler, uygun yolu birlikte belirleriz.</p>
+        <dl class="contact__list">
+          <div class="contact__item">
+            <dt class="label">E-posta</dt>
+            <dd><a href="mailto:info@keybrotherstech.com">info@keybrotherstech.com</a></dd>
+          </div>
+          <div class="contact__item">
+            <dt class="label">Telefon</dt>
+            <dd><a href="tel:+908503024468">0850 302 44 68</a></dd>
+          </div>
+        </dl>
+        <div class="button-row">
+          <a class="button button--primary" href="mailto:info@keybrotherstech.com">İletişime geçin
+            <svg viewBox="0 0 16 16" aria-hidden="true" focusable="false"><path d="M2 8h11M8.5 3.5 13 8l-4.5 4.5" stroke="currentColor" stroke-width="1.5" fill="none"/></svg>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+</BaseLayout>
