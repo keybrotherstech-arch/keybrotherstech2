@@ -20,7 +20,7 @@ const heroName = `${product.key}/hero`;
 const mainShot = hasShot(heroName) ? shot(heroName) : shot(product.key);
 const others = products.filter((p) => p.key !== product.key);
 ---
-<BaseLayout title={d.seoTitle} description={d.seoDescription} path={`/${product.key}`}>
+<BaseLayout title={d.seoTitle} description={d.seoDescription} path={`/${product.key}`} product={product.key}>
   <main id="icerik" class="pd" data-product={product.key}>
     <section class="pd-hero">
       <div class="wrap">
@@ -30,12 +30,12 @@ const others = products.filter((p) => p.key !== product.key);
           <span aria-current="page">{product.name}</span>
         </nav>
         <div class="pd-hero__grid">
-          <div>
-            <ProductBrand product={product.key} />
-            <p class="product__category">{product.category}</p>
-            <h1>{d.h1}</h1>
-            <p class="pd-hero__lead">{d.lead}</p>
-            <div class="actions">
+          <div data-reveal-group="90">
+            <div data-reveal><ProductBrand product={product.key} /></div>
+            <p class="product__category" data-reveal>{product.category}</p>
+            <h1 data-reveal>{d.h1}</h1>
+            <p class="pd-hero__lead" data-reveal>{d.lead}</p>
+            <div class="actions" data-reveal>
               <a class="button button--primary" href={product.url}>
                 {product.domain} adresine gidin
                 <svg viewBox="0 0 16 16" aria-hidden="true" focusable="false"><path d="M4 12 12 4M6 4h6v6" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
@@ -43,7 +43,7 @@ const others = products.filter((p) => p.key !== product.key);
               <a class="button button--secondary" href="/iletisim">Bize ulaşın</a>
             </div>
           </div>
-          <div class="pd-hero__visual">
+          <div class="pd-hero__visual" data-reveal="right">
             <BrowserFrame address={product.domain} light={mainShot.light} dark={mainShot.dark} alt={product.shotAlt} sizes="(max-width: 1000px) 92vw, 620px" />
           </div>
         </div>
@@ -53,9 +53,9 @@ const others = products.filter((p) => p.key !== product.key);
     <section class="section section--tight">
       <div class="wrap">
         <h2 class="visually-hidden">Öne çıkan özellikler</h2>
-        <div class="highlights">
+        <div class="highlights" data-reveal-group="120">
           {d.highlights.map((h) => (
-            <article class="highlight">
+            <article class="highlight" data-reveal>
               <h3>{h.title}</h3>
               <p>{h.text}</p>
             </article>
@@ -71,7 +71,7 @@ const others = products.filter((p) => p.key !== product.key);
           const image = hasShot(name) ? shot(name) : null;
           return (
             <article class:list={['feature', { 'feature--flip': i % 2 === 1, 'feature--text': !image }]}>
-              <div class="feature__copy">
+              <div class="feature__copy" data-reveal>
                 <p class="product__category">{s.eyebrow}</p>
                 <h2>{s.title}</h2>
                 <p class="feature__text">{s.text}</p>
@@ -80,7 +80,7 @@ const others = products.filter((p) => p.key !== product.key);
                 </ul>
               </div>
               {image && (
-                <div class="feature__visual">
+                <div class="feature__visual" data-reveal={i % 2 === 1 ? 'left' : 'right'}>
                   <BrowserFrame address={product.domain} light={image.light} dark={image.dark} alt={`${product.name}: ${s.title} bölümünün ekran görüntüsü`} sizes="(max-width: 1000px) 92vw, 620px" />
                 </div>
               )}
@@ -93,12 +93,12 @@ const others = products.filter((p) => p.key !== product.key);
     {d.audience.length > 0 && (
       <section class="section">
         <div class="wrap">
-          <div class="section__heading">
+          <div class="section__heading" data-reveal>
             <h2>Kimler için</h2>
           </div>
-          <div class:list={['cards', `cards--${d.audience.length}`]}>
+          <div class:list={['cards', `cards--${d.audience.length}`]} data-reveal-group="100">
             {d.audience.map((a) => (
-              <article class="card card--plain">
+              <article class="card card--plain" data-reveal>
                 <h3>{a.title}</h3>
                 <p>{a.text}</p>
               </article>
@@ -111,10 +111,10 @@ const others = products.filter((p) => p.key !== product.key);
     {d.trust && (
       <section class:list={['section', { 'section--subtle': d.audience.length > 0 }]}>
         <div class="wrap why">
-          <h2>{d.trust.title}</h2>
-          <div class="reasons">
+          <h2 data-reveal>{d.trust.title}</h2>
+          <div class="reasons" data-reveal-group="100">
             {d.trust.items.map((t) => (
-              <article class="reason">
+              <article class="reason" data-reveal>
                 <h3>{t.title}</h3>
                 <p>{t.text}</p>
               </article>
@@ -128,7 +128,7 @@ const others = products.filter((p) => p.key !== product.key);
       <section class="section section--tight">
         <div class="wrap">
           <h2 class="visually-hidden">Kısa bilgiler</h2>
-          <dl class="facts">
+          <dl class="facts" data-reveal>
             {d.facts.map((f) => (
               <div>
                 <dt>{f.label}</dt>
@@ -142,7 +142,7 @@ const others = products.filter((p) => p.key !== product.key);
 
     <section class="section section--tight">
       <div class="wrap">
-        <div class="pd-cta">
+        <div class="pd-cta" data-reveal>
           <div>
             <h2>{product.name} kendi sitesinde.</h2>
             <p>Ürünü denemek ve güncel bilgiye ulaşmak için {product.domain} adresini ziyaret edin.</p>
@@ -152,7 +152,7 @@ const others = products.filter((p) => p.key !== product.key);
             <svg viewBox="0 0 16 16" aria-hidden="true" focusable="false"><path d="M4 12 12 4M6 4h6v6" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
           </a>
         </div>
-        <div class="other-products">
+        <div class="other-products" data-reveal>
           <p class="site-footer__heading">Diğer ürünlerimiz</p>
           <ul>
             {others.map((o) => (

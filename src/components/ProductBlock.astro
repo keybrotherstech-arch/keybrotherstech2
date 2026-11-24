@@ -12,7 +12,7 @@ interface Props {
 const { product: p } = Astro.props;
 const image = shot(p.key);
 ---
-<article class="product" data-product={p.key} id={p.key}>
+<article class="product" data-product={p.key} id={p.key} data-reveal>
   <div class="product__copy">
     <ProductBrand product={p.key} />
     <p class="product__category">{p.category}</p>

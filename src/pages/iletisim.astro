@@ -17,28 +17,28 @@ import { site } from '../data/site';
 
     <section class="section section--after-header">
       <div class="wrap">
-        <div class="contact-grid">
-          <article class="contact-card">
+        <div class="contact-grid" data-reveal-group="90">
+          <article class="contact-card" data-reveal>
             <h2>E-posta</h2>
             <p><a href={`mailto:${site.email}`}>{site.email}</a></p>
           </article>
-          <article class="contact-card">
+          <article class="contact-card" data-reveal>
             <h2>Telefon</h2>
             <p><a href={site.phone.href}>{site.phone.display}</a></p>
           </article>
-          <article class="contact-card">
+          <article class="contact-card" data-reveal>
             <h2>Adres</h2>
             <address>
               {site.address.street}<br />
               {site.address.postalCode} {site.address.district}/{site.address.city}
             </address>
           </article>
-          <article class="contact-card">
+          <article class="contact-card" data-reveal>
             <h2>KEP</h2>
             <p>{site.registry.kep}</p>
           </article>
         </div>
-        <p class="contact-note">
+        <p class="contact-note" data-reveal="fade">
           Kişisel verilerinizin nasıl işlendiğini
           <a href="/kvkk-aydinlatma-metni">KVKK Aydınlatma Metni</a>’nde okuyabilirsiniz.
         </p>
