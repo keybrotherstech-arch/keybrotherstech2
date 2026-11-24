@@ -1,0 +1,48 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import PageHeader from '../components/PageHeader.astro';
+import { site } from '../data/site';
+---
+<BaseLayout
+  title="İletişim | KeyBrothers Teknoloji"
+  description="KeyBrothers Teknoloji iletişim bilgileri: e-posta, telefon, adres ve KEP."
+  path="/iletisim"
+>
+  <main id="icerik">
+    <PageHeader
+      eyebrow="İletişim"
+      title="Projenizi konuşalım."
+      lead="İlk görüşmede ihtiyacı dinler, uygun yolu birlikte belirleriz."
+    />
+
+    <section class="section section--after-header">
+      <div class="wrap">
+        <div class="contact-grid">
+          <article class="contact-card">
+            <h2>E-posta</h2>
+            <p><a href={`mailto:${site.email}`}>{site.email}</a></p>
+          </article>
+          <article class="contact-card">
+            <h2>Telefon</h2>
+            <p><a href={site.phone.href}>{site.phone.display}</a></p>
+          </article>
+          <article class="contact-card">
+            <h2>Adres</h2>
+            <address>
+              {site.address.street}<br />
+              {site.address.postalCode} {site.address.district}/{site.address.city}
+            </address>
+          </article>
+          <article class="contact-card">
+            <h2>KEP</h2>
+            <p>{site.registry.kep}</p>
+          </article>
+        </div>
+        <p class="contact-note">
+          Kişisel verilerinizin nasıl işlendiğini
+          <a href="/kvkk-aydinlatma-metni">KVKK Aydınlatma Metni</a>’nde okuyabilirsiniz.
+        </p>
+      </div>
+    </section>
+  </main>
+</BaseLayout>

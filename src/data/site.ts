@@ -3,8 +3,6 @@
 
 export const site = {
   url: 'https://keybrotherstech.com',
-  // Logodaki ad
-  brand: 'KeyBrothers Tech.',
   name: 'KeyBrothers Teknoloji',
   legalName: 'KeyBrothers Teknoloji Yazılım ve Danışmanlık Limited Şirketi',
   tagline: 'Kendi ürününü geliştiren yazılım şirketi',
@@ -32,10 +30,10 @@ export const site = {
 } as const;
 
 export const nav = [
-  { href: '/#urunler', label: 'Ürünler' },
-  { href: '/#hizmetler', label: 'Hizmetler' },
-  { href: '/#hakkimizda', label: 'Hakkımızda' },
-  { href: '/#iletisim', label: 'İletişim' },
+  { href: '/urunler', label: 'Ürünler' },
+  { href: '/hizmetler', label: 'Hizmetler' },
+  { href: '/hakkimizda', label: 'Hakkımızda' },
+  { href: '/iletisim', label: 'İletişim' },
 ] as const;
 
 // Ürün metinleri her ürünün kendi sitesinden alınmıştır.

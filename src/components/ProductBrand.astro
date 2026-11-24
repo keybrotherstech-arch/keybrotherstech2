@@ -1,0 +1,32 @@
+---
+// Urunun kendi logosu / ikonu. Dosyalar urunlerin kendi sitelerinden alinmistir, yeniden cizilmez.
+import { Image } from 'astro:assets';
+import ThemeImage from './ThemeImage.astro';
+import aylexLogoDark from '../assets/logolar/aylex-logo-dark.png';
+import aylexLogoWhite from '../assets/logolar/aylex-logo-white.png';
+import vekilinIcon from '../assets/logolar/vekilin-ikon.svg';
+import promptturkIcon from '../assets/logolar/promptturk-ikon.png';
+
+interface Props {
+  product: 'aylex' | 'vekilin' | 'promptturk';
+}
+
+const { product } = Astro.props;
+---
+<div class="product__brand">
+  {product === 'aylex' && (
+    <ThemeImage light={aylexLogoDark} dark={aylexLogoWhite} alt="AyLex" width={84} loading="eager" class="product__logo" />
+  )}
+  {product === 'vekilin' && (
+    <>
+      <Image src={vekilinIcon} alt="" width={36} height={36} class="product__icon" />
+      <span class="product__wordmark product__wordmark--vekilin">Vekilin<span>.</span></span>
+    </>
+  )}
+  {product === 'promptturk' && (
+    <>
+      <Image src={promptturkIcon} alt="" width={36} densities={[1, 2, 3]} class="product__icon" />
+      <span class="product__wordmark">PromptTurk</span>
+    </>
+  )}
+</div>

@@ -1,0 +1,141 @@
+{
+  "key": "promptturk",
+  "seoTitle": "PromptTurk Tepki Simülasyonu | KeyBrothers Teknoloji",
+  "seoDescription": "PromptTurk, bir paylaşımın, ürünün ya da kararın sosyal medyadaki karşılığını yayından önce yapay zekayla, sentetik bir kitle üzerinde canlandırır.",
+  "h1": "PromptTurk: yayından önce tepkiyi görün",
+  "lead": "PromptTurk, bir paylaşımın, ürünün ya da kararın sosyal medyada nasıl karşılanacağını yapay zekayla canlandıran bir tepki simülasyonudur. Bireylere güvenli bir deneme alanı, kurumlara karar öncesi öngörü sunar.",
+  "highlights": [
+    {
+      "title": "Sekiz platform, tek sahne",
+      "text": "Yorumlar, tartışmalar, mesajlar ve haber yorumları sekiz farklı platformun üslubuyla aynı ekranda canlandırılır."
+    },
+    {
+      "title": "Çeşitli sentetik kitle",
+      "text": "Farklı yaş, görüş ve üsluptan yüzlerce yapay kişilik senaryoya birbirinden farklı tepkiler verir."
+    },
+    {
+      "title": "Viral skor ve duygu analizi",
+      "text": "Tepkinin yayılma potansiyeli ile olumlu, nötr ve tepkili dağılımı tek panelde izlenir."
+    },
+    {
+      "title": "PR önerisi",
+      "text": "Her simülasyon, sonuca göre nasıl hareket edilebileceğini anlatan bir iletişim önerisiyle tamamlanır."
+    }
+  ],
+  "sections": [
+    {
+      "eyebrow": "Nasıl çalışır",
+      "title": "Üç adımda simülasyon",
+      "text": "Kullanıcı kendisini, bir ürünü, kampanyayı ya da kararı tek cümleyle anlatır, isterse fotoğraf ekler. Yapay zeka senaryoya uygun sentetik kitleyi saniyeler içinde toplar ve tepkiler canlı bir akış olarak gelmeye başlar. Simülasyon kapalı bir prova sahnesinde kalır, hiçbir içerik gerçek dünyada yayımlanmaz.",
+      "bullets": [
+        "Senaryo için bir cümle yeterli, dilenirse fotoğraf eklenebilir",
+        "Farklı yaş, görüş ve üsluptan yüzlerce sentetik kişi sahneye çıkar",
+        "Yorum akışı, viral skor, duygu analizi ve PR önerisi tek panelde",
+        "Kurulum gerektirmez, tarayıcıda çalışır"
+      ],
+      "shotText": "Üç adımda sahnedesiniz.",
+      "shotUrl": "https://promptturk.com/"
+    },
+    {
+      "eyebrow": "Gerçekçilik",
+      "title": "Gerçek sosyal medya dilinden öğrenen yapay zeka",
+      "text": "PromptTurk'ün kitlesi kalıp cümlelerle konuşmaz. Yapay zeka, kamuya açık çok sayıda etkileşimin dilini, ritmini ve kültürünü öğrenerek her platformun kendine özgü üslubunu yansıtır. Tepkiler de gerçek viral dalgalar gibi sırayla gelir: önce meraklılar, ardından eleştirmenler, en son haber döngüsü.",
+      "bullets": [
+        "Kamuya açık yorum ve tartışmalardan damıtılmış, yaşayan bir üslup",
+        "Her platformun kendi aksanı ve tonu",
+        "Tek sesli olmayan, demografik olarak çeşitli bir kitle",
+        "Gerçek viral dalgaların zamanlamasını izleyen tepki ritmi"
+      ],
+      "shotText": "Gerçeğinden ayırt etmek sandığınızdan zor.",
+      "shotUrl": "https://promptturk.com/"
+    },
+    {
+      "eyebrow": "Ekranlar",
+      "title": "Her platform kendi üslubuyla",
+      "text": "Simülasyon tepkileri tek bir akışa yığmaz, her platformun kendi biçiminde gösterir. Mikroblogda tartışma, sözlükte analiz, forumda alıntılı yazışma, haber sitesinde manşet ve okur yorumu ayrı ayrı canlanır. Bu önizlemeler yalnızca tarz benzetimidir, logo ya da marka ögesi kullanılmaz.",
+      "bullets": [
+        "Mikroblog, fotoğraf ve video paylaşım akışları",
+        "Sözlük ve forum tarzı tartışma ekranları",
+        "Haber sitesi tarzında manşet ve okur yorumları",
+        "Sentetik iş birliği tekliflerinin düştüğü mesaj kutusu"
+      ],
+      "shotText": "Her platform kendi diliyle konuşur.",
+      "shotUrl": "https://promptturk.com/"
+    },
+    {
+      "eyebrow": "Analiz paneli",
+      "title": "Viral skor, duygu dağılımı ve PR önerisi",
+      "text": "Tepkiler akarken analiz paneli simülasyonun genel resmini çıkarır. Viral skor, olumlu, nötr ve tepkili dağılımı ile tartışmada öne çıkan başlıklar aynı ekranda görülür. Panel, sonuca göre atılabilecek adımı anlatan bir PR önerisi de verir.",
+      "bullets": [
+        "Senaryonun yayılma potansiyelini gösteren viral skor",
+        "Olumlu, nötr ve tepkili olarak duygu dağılımı",
+        "Tartışmada öne çıkan başlıklar",
+        "Duruma özel PR önerisi"
+      ],
+      "shotText": "Kitle şu anda toplanıyor.",
+      "shotUrl": "https://promptturk.com/"
+    },
+    {
+      "eyebrow": "Kurumsal kullanım",
+      "title": "Kararlar pazara çıkmadan önce sınanır",
+      "text": "Kurumlar bir ürünü, kampanyayı, sloganı ya da fiyat değişikliği gibi kritik bir kararı sentetik bir odak grubunda deneyebilir. Simülasyon pazar tepkisini puanlar, duygu dağılımını gösterir ve duyurunun nasıl yapılabileceğine dair öneri sunar. Böylece olası bir kriz lansmandan önce görülür.",
+      "bullets": [
+        "Ürün, kampanya ve slogan testi",
+        "Zam, politika ve değişiklik kararlarının provası",
+        "Pazar tepkisi puanı ve duygu dağılımı",
+        "Lansman öncesi kriz senaryosuna hazırlık"
+      ],
+      "shotText": "Kriz masası, lansmandan önce.",
+      "shotUrl": "https://promptturk.com/"
+    }
+  ],
+  "audience": [
+    {
+      "title": "Bireyler",
+      "text": "Bir paylaşımın ya da fikrin nasıl karşılanacağını merak edenler için güvenli ve eğlenceli bir prova alanı."
+    },
+    {
+      "title": "İçerik üreticileri",
+      "text": "Bir içeriği yayınlamadan önce kitlenin olası tepkisini görmek isteyenler için."
+    },
+    {
+      "title": "Markalar ve kurumlar",
+      "text": "Ürün, fiyat, kampanya ve kararlarını pazara çıkmadan sentetik bir kitleyle test etmek isteyen ekipler için."
+    }
+  ],
+  "trust": {
+    "title": "Şeffaflık ve güvenlik",
+    "items": [
+      {
+        "title": "Tamamen sentetik çıktı",
+        "text": "Yapay zeka gerçek dilden öğrenir, ancak ürettiği her kişi, yorum ve sayı sentetiktir. Gerçek kişiler taklit edilmez."
+      },
+      {
+        "title": "Kalıcı simülasyon etiketi",
+        "text": "Arayüzde simülasyon etiketi her zaman görünür, içerik gerçek bir haber gibi sunulmaz."
+      },
+      {
+        "title": "KVKK uyumu",
+        "text": "Eğitim verisi anonim ve kamuya açık kaynaklardan gelir. Aydınlatma metni ve açık rıza metni yayındadır."
+      },
+      {
+        "title": "Yalnızca tarz benzetimi",
+        "text": "Platform önizlemeleri genel bir tarz benzetimidir, hiçbir logo ya da marka ögesi kullanılmaz."
+      }
+    ]
+  },
+  "facts": [
+    {
+      "label": "Platform",
+      "value": "8 platform, tek sahnede"
+    },
+    {
+      "label": "Çalışma biçimi",
+      "value": "Tarayıcıda, kurulum gerektirmez"
+    },
+    {
+      "label": "Çıktı",
+      "value": "Tamamı sentetik içerik"
+    }
+  ]
+}

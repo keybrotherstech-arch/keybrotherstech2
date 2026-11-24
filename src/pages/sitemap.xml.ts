@@ -2,7 +2,18 @@ import type { APIRoute } from 'astro';
 import { site } from '../data/site';
 
 // Yayindaki sayfalar. Yeni sayfa eklenince bu listeye de eklenir.
-const paths = ['/'];
+const paths = [
+  '/',
+  '/urunler',
+  '/aylex',
+  '/vekilin',
+  '/promptturk',
+  '/hizmetler',
+  '/hakkimizda',
+  '/iletisim',
+  '/kvkk-aydinlatma-metni',
+  '/gizlilik-politikasi',
+];
 
 export const GET: APIRoute = () => {
   const lastmod = new Date().toISOString().slice(0, 10);

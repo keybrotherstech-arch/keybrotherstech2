@@ -1,0 +1,38 @@
+---
+// Urunler sayfasindaki urun blogu: solda logo, metin ve ozellikler; sagda urunun gercek ekrani.
+import BrowserFrame from './BrowserFrame.astro';
+import ProductBrand from './ProductBrand.astro';
+import { shot } from '../data/media';
+import type { products } from '../data/site';
+
+interface Props {
+  product: (typeof products)[number];
+}
+
+const { product: p } = Astro.props;
+const image = shot(p.key);
+---
+<article class="product" data-product={p.key} id={p.key}>
+  <div class="product__copy">
+    <ProductBrand product={p.key} />
+    <p class="product__category">{p.category}</p>
+    <h2>{p.title}</h2>
+    <p class="product__summary">{p.summary}</p>
+    <ul class="product__features">
+      {p.features.map((f) => <li>{f}</li>)}
+    </ul>
+    <div class="product__links">
+      <a class="product__link" href={`/${p.key}`}>
+        {p.name} hakkında ayrıntılar
+        <svg viewBox="0 0 16 16" aria-hidden="true" focusable="false"><path d="M3 8h10M9 4l4 4-4 4" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </a>
+      <a class="product__link product__link--external" href={p.url}>
+        {p.domain}
+        <svg viewBox="0 0 16 16" aria-hidden="true" focusable="false"><path d="M4 12 12 4M6 4h6v6" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </a>
+    </div>
+  </div>
+  <div class="product__visual">
+    <BrowserFrame address={p.domain} light={image.light} dark={image.dark} alt={p.shotAlt} sizes="(max-width: 1000px) 90vw, 640px" />
+  </div>
+</article>

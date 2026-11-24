@@ -1,14 +1,22 @@
 ---
 // Ust menu. Butun sayfalarda ayni dosya kullanilir.
 import Brand from './Brand.astro';
-import { nav } from '../data/site';
+import { nav, products } from '../data/site';
+
+// Bulunulan sayfa menude isaretlenir; urun sayfalari "Urunler" altinda sayilir.
+const path = Astro.url.pathname.replace(/\/$/, '') || '/';
+const productPaths = products.map((p) => `/${p.key}`);
+const isCurrent = (href: string) =>
+  path === href || (href === '/urunler' && productPaths.includes(path));
 ---
 <header class="site-header">
   <div class="wrap site-header__inner">
-    <Brand label="KeyBrothers Tech, ana sayfa" />
+    <Brand label="KeyBrothers Teknoloji, ana sayfa" />
 
     <nav class="nav" aria-label="Ana menü">
-      {nav.map((item) => <a href={item.href}>{item.label}</a>)}
+      {nav.map((item) => (
+        <a href={item.href} aria-current={isCurrent(item.href) ? 'page' : undefined}>{item.label}</a>
+      ))}
     </nav>
 
     <div class="site-header__actions">
@@ -21,7 +29,7 @@ import { nav } from '../data/site';
           <path d="M12 2.5v2.2M12 19.3v2.2M2.5 12h2.2M19.3 12h2.2M5.3 5.3l1.6 1.6M17.1 17.1l1.6 1.6M18.7 5.3l-1.6 1.6M6.9 17.1l-1.6 1.6" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/>
         </svg>
       </button>
-      <a class="button button--primary site-header__cta" href="/#iletisim">İletişime geçin</a>
+      <a class="button button--primary site-header__cta" href="/iletisim">İletişime geçin</a>
     </div>
   </div>
 </header>

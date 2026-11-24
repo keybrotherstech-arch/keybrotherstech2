@@ -1,0 +1,30 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import PageHeader from '../components/PageHeader.astro';
+import ProductBlock from '../components/ProductBlock.astro';
+import ContactBand from '../components/ContactBand.astro';
+import { products } from '../data/site';
+---
+<BaseLayout
+  title="Ürünler | KeyBrothers Teknoloji"
+  description="KeyBrothers Teknoloji’nin geliştirdiği ürünler: hukuk platformu AyLex, Meclis takip platformu Vekilin ve tepki simülasyonu PromptTurk."
+  path="/urunler"
+>
+  <main id="icerik">
+    <PageHeader
+      eyebrow="Ürünler"
+      title="Ürünlerimiz"
+      lead="KeyBrothers Teknoloji; hukuk platformu AyLex’i, Meclis takip platformu Vekilin’i ve tepki simülasyonu PromptTurk’ü geliştiriyor."
+    />
+
+    <section class="section section--after-header">
+      <div class="wrap">
+        <div class="product-list">
+          {products.map((p) => <ProductBlock product={p} />)}
+        </div>
+      </div>
+    </section>
+
+    <ContactBand />
+  </main>
+</BaseLayout>

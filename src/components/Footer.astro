@@ -8,7 +8,7 @@ import { site, products } from '../data/site';
     <h2 class="visually-hidden">Şirket bilgileri</h2>
     <div class="site-footer__grid">
       <div class="site-footer__company">
-        <Brand label="KeyBrothers Tech, sayfa başı" />
+        <Brand label="KeyBrothers Teknoloji, ana sayfa" />
         <p class="site-footer__legal-name">{site.legalName}</p>
         <address>
           {site.address.oneLine}<br />
@@ -25,15 +25,22 @@ import { site, products } from '../data/site';
         <div>
           <p class="site-footer__heading">Ürünler</p>
           <ul>
-            {products.map((p) => <li><a href={p.url}>{p.name}</a></li>)}
+            {products.map((p) => <li><a href={`/${p.key}`}>{p.name}</a></li>)}
           </ul>
         </div>
         <div>
           <p class="site-footer__heading">Şirket</p>
           <ul>
-            <li><a href="/#hizmetler">Hizmetler</a></li>
-            <li><a href="/#hakkimizda">Hakkımızda</a></li>
-            <li><a href="/#iletisim">İletişim</a></li>
+            <li><a href="/hizmetler">Hizmetler</a></li>
+            <li><a href="/hakkimizda">Hakkımızda</a></li>
+            <li><a href="/iletisim">İletişim</a></li>
+          </ul>
+        </div>
+        <div>
+          <p class="site-footer__heading">Yasal</p>
+          <ul>
+            <li><a href="/kvkk-aydinlatma-metni">KVKK Aydınlatma Metni</a></li>
+            <li><a href="/gizlilik-politikasi">Gizlilik ve Çerez Politikası</a></li>
           </ul>
         </div>
       </nav>

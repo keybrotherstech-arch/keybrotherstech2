@@ -1,0 +1,64 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import PageHeader from '../components/PageHeader.astro';
+import ContactBand from '../components/ContactBand.astro';
+import { site, products, reasons } from '../data/site';
+---
+<BaseLayout
+  title="Hakkımızda | KeyBrothers Teknoloji"
+  description={site.description}
+  path="/hakkimizda"
+>
+  <main id="icerik">
+    <PageHeader
+      eyebrow="Hakkımızda"
+      title="Kendi ürününü geliştiren yazılım şirketi."
+      lead="KeyBrothers Teknoloji, Ankara merkezli bir yazılım şirketidir. Hukuk platformu AyLex’i, Meclis takip platformu Vekilin’i ve tepki simülasyonu PromptTurk’ü geliştirir; aynı ürün disipliniyle kamu ve özel sektör kurumlarına yazılım ve yapay zeka çözümleri üretir."
+    />
+
+    <section class="section section--after-header">
+      <div class="wrap why">
+        <h2>Neden biz</h2>
+        <div class="reasons">
+          {reasons.map((r) => (
+            <article class="reason">
+              <h3>{r.title}</h3>
+              <p>{r.summary}</p>
+            </article>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <section class="section section--subtle">
+      <div class="wrap why">
+        <h2>Ürünlerimiz</h2>
+        <div class="reasons">
+          {products.map((p) => (
+            <article class="reason reason--link">
+              <h3><a href={`/${p.key}`}>{p.name}</a></h3>
+              <p>{p.category} · {p.title}</p>
+            </article>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="wrap why">
+        <h2>Şirket bilgileri</h2>
+        <dl class="company">
+          <div><dt>Unvan</dt><dd>{site.legalName}</dd></div>
+          <div><dt>Adres</dt><dd>{site.address.oneLine}</dd></div>
+          <div><dt>MERSİS</dt><dd>{site.registry.mersis}</dd></div>
+          <div><dt>Ticaret sicil</dt><dd>{site.registry.tradeRegistry}</dd></div>
+          <div><dt>KEP</dt><dd>{site.registry.kep}</dd></div>
+          <div><dt>E-posta</dt><dd><a href={`mailto:${site.email}`}>{site.email}</a></dd></div>
+          <div><dt>Telefon</dt><dd><a href={site.phone.href}>{site.phone.display}</a></dd></div>
+        </dl>
+      </div>
+    </section>
+
+    <ContactBand />
+  </main>
+</BaseLayout>
