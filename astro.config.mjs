@@ -39,5 +39,14 @@ export default defineConfig({
       subsets: ['latin', 'latin-ext'],
       fallbacks: ['ui-monospace', 'Cascadia Mono', 'Consolas', 'monospace'],
     },
+    {
+      provider: fontProviders.fontsource(),
+      name: 'Schibsted Grotesk',
+      cssVariable: '--font-schibsted',
+      weights: ['400 900'],
+      styles: ['normal'],
+      subsets: ['latin', 'latin-ext'],
+      fallbacks: ['system-ui', 'Segoe UI', 'sans-serif'],
+    },
   ],
 });
