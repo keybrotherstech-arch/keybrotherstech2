@@ -526,9 +526,10 @@ address {
   --product-tint: #f8edef;
 }
 
+/* PromptTurk: logosundaki maviden (#4fabef) */
 [data-product='promptturk'] {
-  --product-accent: #1d1d1f;
-  --product-tint: #f4f3ef;
+  --product-accent: #1f6db5;
+  --product-tint: #eaf4fd;
 }
 
 :root[data-theme='dark'] [data-product] {
@@ -542,8 +543,8 @@ address {
 }
 
 :root[data-theme='dark'] [data-product='promptturk'] {
-  --product-accent: #e4e4e1;
-  --product-tint: #25272a;
+  --product-accent: #7cc2f4;
+  --product-tint: #172634;
 }
 
 .product__copy {
@@ -1736,22 +1737,22 @@ address {
   overflow: hidden;
   padding: clamp(4.5rem, 9vw, 8rem) 0 clamp(4rem, 8vw, 7rem);
   background-color: var(--ink);
-  background-image:
-    radial-gradient(ellipse 60% 70% at 85% 10%, rgba(78, 140, 170, 0.22), transparent 70%),
-    linear-gradient(var(--ink-line) 1px, transparent 1px),
-    linear-gradient(90deg, var(--ink-line) 1px, transparent 1px);
-  background-size:
-    100% 100%,
-    64px 64px,
-    64px 64px;
-  background-position:
-    0 0,
-    -1px -1px,
-    -1px -1px;
+  background-image: radial-gradient(ellipse 60% 70% at 85% 10%, rgba(78, 140, 170, 0.22), transparent 70%);
   color: var(--ink-text);
 }
 
-/* Izgara cizgileri asagi dogru silinir. */
+/* Veri agi (public/ag.js). Yazinin oldugu sol taraf soluk kalir ki metin rahat okunsun. */
+.home-hero__net {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  -webkit-mask-image: linear-gradient(90deg, rgba(0, 0, 0, 0.3) 0%, rgba(0, 0, 0, 0.55) 40%, #000 75%);
+  mask-image: linear-gradient(90deg, rgba(0, 0, 0, 0.3) 0%, rgba(0, 0, 0, 0.55) 40%, #000 75%);
+}
+
+/* Ag asagi dogru silinir. */
 .home-hero::after {
   content: "";
   position: absolute;
@@ -2263,10 +2264,11 @@ address {
 
   .home-hero {
     padding-top: 3.5rem;
-    background-size:
-      100% 100%,
-      44px 44px,
-      44px 44px;
+  }
+
+  .home-hero__net {
+    -webkit-mask-image: linear-gradient(180deg, rgba(0, 0, 0, 0.35), #000 70%);
+    mask-image: linear-gradient(180deg, rgba(0, 0, 0, 0.35), #000 70%);
   }
 
   .home-hero h1 {
