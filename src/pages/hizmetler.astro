@@ -2,37 +2,35 @@
 import BaseLayout from '../layouts/BaseLayout.astro';
 import PageHeader from '../components/PageHeader.astro';
 import ContactBand from '../components/ContactBand.astro';
+import ServiceIcon from '../components/ServiceIcon.astro';
 import { services, process } from '../data/site';
-
-const serviceIcons: Record<string, string> = {
-  saas: '<rect x="3" y="4" width="18" height="16" rx="2"/><path d="M3 9h18M8 14h8"/>',
-  'yapay-zeka': '<path d="M12 3v18M3 12h18M6 6l12 12M18 6 6 18"/>',
-  pazarlama: '<path d="M4 19V9m8 10V5m8 14v-7M2 19h20"/>',
-  'medya-oyun': '<rect x="3" y="5" width="18" height="14" rx="3"/><path d="M7 12h5m-2.5-2.5v5M16 11h.01M18 13h.01"/>',
-};
 ---
 <BaseLayout
   title="Hizmetler | KeyBrothers Teknoloji"
-  description="SaaS ürün geliştirme, yapay zeka ve otomasyon, pazarlama teknolojileri, dijital medya ve oyun: KeyBrothers Teknoloji’nin kurumlara sunduğu hizmetler."
+  description="Kamu kurumları ve şirketler için SaaS ürün geliştirme, yapay zeka ve otomasyon, pazarlama teknolojileri, dijital medya ve oyun hizmetleri."
   path="/hizmetler"
 >
   <main id="icerik">
     <PageHeader
       eyebrow="Hizmetler"
-      title="Hizmetler"
-      lead="Kendi ürünlerimizi geliştirirken kullandığımız ürün disipliniyle kamu ve özel sektör kurumlarına yazılım ve yapay zeka çözümleri üretiyoruz."
+      title="Kurumların ihtiyacına göre yazılım ve yapay zeka."
+      lead="Kamu kurumları ve şirketler için ihtiyacı birlikte netleştirir, çözümü tasarlar, geliştirir ve yayından sonra bakım ve destekle sürdürürüz. Her projede aynı kalite, güvenlik ve süreklilik ölçütlerini uygularız."
     />
 
     <section class="section section--after-header">
       <div class="wrap">
-        <div class="cards cards--two" data-reveal-group="90">
-          {services.map((s) => (
-            <article class="card" data-reveal>
-              <div class="card__icon" aria-hidden="true">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" set:html={serviceIcons[s.slug]} />
+        <div class="svc-list">
+          {services.map((s, i) => (
+            <article class="svc-row" id={s.slug} data-reveal>
+              <span class="svc-row__no">{String(i + 1).padStart(2, '0')}</span>
+              <div>
+                <ServiceIcon slug={s.slug} />
+                <h2>{s.title}</h2>
+                <p>{s.summary}</p>
               </div>
-              <h2>{s.title}</h2>
-              <p>{s.summary}</p>
+              <ul aria-label={`${s.title} kapsamı`}>
+                {s.details.map((d) => <li>{d}</li>)}
+              </ul>
             </article>
           ))}
         </div>
@@ -41,8 +39,11 @@ const serviceIcons: Record<string, string> = {
 
     <section class="section section--subtle">
       <div class="wrap">
-        <div class="section__heading" data-reveal>
-          <h2>Nasıl çalışıyoruz</h2>
+        <div class="section__heading section__heading--lead" data-reveal>
+          <div>
+            <p class="eyebrow">Nasıl çalışıyoruz</p>
+            <h2>Her adımı görünür, uçtan uca bir süreç.</h2>
+          </div>
         </div>
         <ol class="steps" data-reveal-group="160">
           {process.map((step, i) => (

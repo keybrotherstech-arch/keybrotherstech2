@@ -1,0 +1,18 @@
+---
+// Hizmet simgeleri (basit cizgi simgeler). Ana sayfa ve Hizmetler sayfasi ayni simgeleri kullanir.
+interface Props {
+  slug: string;
+}
+
+const paths: Record<string, string> = {
+  saas: '<rect x="3" y="4" width="18" height="16" rx="2"/><path d="M3 9h18M8 14h8"/>',
+  'yapay-zeka': '<path d="M12 3v18M3 12h18M6 6l12 12M18 6 6 18"/>',
+  pazarlama: '<path d="M4 19V9m8 10V5m8 14v-7M2 19h20"/>',
+  'medya-oyun': '<rect x="3" y="5" width="18" height="14" rx="3"/><path d="M7 12h5m-2.5-2.5v5M16 11h.01M18 13h.01"/>',
+};
+
+const { slug } = Astro.props;
+---
+<span class="card__icon" aria-hidden="true">
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" set:html={paths[slug]} />
+</span>

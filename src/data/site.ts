@@ -5,9 +5,9 @@ export const site = {
   url: 'https://keybrotherstech.com',
   name: 'KeyBrothers Teknoloji',
   legalName: 'KeyBrothers Teknoloji Yazılım ve Danışmanlık Limited Şirketi',
-  tagline: 'Kendi ürününü geliştiren yazılım şirketi',
+  tagline: 'Kamu ve özel sektör için yazılım ve yapay zeka',
   description:
-    'KeyBrothers Teknoloji; hukuk platformu AyLex, Meclis takip platformu Vekilin ve tepki simülasyonu PromptTurk’ün geliştiricisidir. Kamu ve özel sektör kurumlarına yazılım ve yapay zeka çözümleri üretir.',
+    'Ankara merkezli KeyBrothers Teknoloji, kamu kurumları ve şirketler için ihtiyaca özel yazılım, yapay zeka ve otomasyon çözümleri geliştirir.',
   locale: 'tr_TR',
   email: 'info@keybrotherstech.com',
   phone: {
@@ -30,8 +30,8 @@ export const site = {
 } as const;
 
 export const nav = [
-  { href: '/urunler', label: 'Ürünler' },
   { href: '/hizmetler', label: 'Hizmetler' },
+  { href: '/urunler', label: 'Ürünler' },
   { href: '/hakkimizda', label: 'Hakkımızda' },
   { href: '/iletisim', label: 'İletişim' },
 ] as const;
@@ -91,26 +91,84 @@ export const products = [
   },
 ] as const;
 
+// details: hizmetin kapsamı (Hizmetler sayfasında ve ana sayfada listelenir).
 export const services = [
   {
     slug: 'saas',
     title: 'SaaS Ürün Geliştirme',
     summary: 'Bulut tabanlı, ölçeklenebilir ürünleri fikirden yayına tasarlıyor ve geliştiriyoruz.',
+    details: [
+      'İhtiyaç analizi ve ürün tasarımı',
+      'Web ve mobil uygulama geliştirme',
+      'Bulut altyapısı, ölçekleme ve izleme',
+      'Yayın sonrası bakım ve geliştirme',
+    ],
   },
   {
     slug: 'yapay-zeka',
     title: 'Yapay Zeka ve Otomasyon',
     summary: 'İş süreçlerini hızlandıran yapay zeka ve otomasyon çözümleri kuruyoruz.',
+    details: [
+      'Kurum verisiyle çalışan yapay zeka asistanları',
+      'Belge okuma, sınıflandırma ve özetleme',
+      'Tekrarlayan işler için iş akışı otomasyonu',
+      'Mevcut sistemlerle entegrasyon',
+    ],
   },
   {
     slug: 'pazarlama',
     title: 'Pazarlama Teknolojileri',
     summary: 'Kampanya yönetimi ve içerik optimizasyonu için araçlar tasarlıyoruz.',
+    details: [
+      'Kampanya yönetimi ve raporlama araçları',
+      'İçerik üretimi ve optimizasyonu',
+      'Kitle tepkisini yayından önce sınayan simülasyonlar',
+      'Ölçüm ve analiz panelleri',
+    ],
   },
   {
     slug: 'medya-oyun',
     title: 'Dijital Medya ve Oyun',
     summary: 'Etkileşimli deneyimler ve oyunlaştırma kurguları üzerinde çalışıyoruz.',
+    details: [
+      'Etkileşimli web deneyimleri',
+      'Oyunlaştırma kurguları',
+      'Dijital içerik ve medya ürünleri',
+      'Eğitim ve tanıtım amaçlı etkileşimli içerik',
+    ],
+  },
+] as const;
+
+// Çalıştığımız alanlar. "main" olanlar büyük kartla, diğerleri yetkinlik alanı olarak gösterilir.
+export const sectors = [
+  {
+    key: 'kamu',
+    main: true,
+    title: 'Kamu kurumları',
+    summary:
+      'Kamu kurumlarının işleyişine ve mevzuatına uygun yazılım ve yapay zeka çözümleri geliştiriyoruz; güvenliği ve sürdürülebilirliği tasarımın başında ele alıyoruz.',
+  },
+  {
+    key: 'ozel',
+    main: true,
+    title: 'Özel sektör',
+    summary:
+      'Şirketlerin iş süreçlerini hızlandıran yazılımlar ve otomasyonlar kuruyor, bunları mevcut sistemlerle bütünleştiriyoruz.',
+  },
+  {
+    key: 'hukuk',
+    title: 'Hukuk ve mevzuat',
+    summary: 'Mevzuat, içtihat ve resmi belgelerle çalışan arama, analiz ve belge sistemleri.',
+  },
+  {
+    key: 'kamu-verisi',
+    title: 'Kamu verisi ve raporlama',
+    summary: 'Kamuya açık kayıtları toplayan, işleyen ve sade bir dille sunan veri platformları.',
+  },
+  {
+    key: 'iletisim',
+    title: 'Medya ve iletişim',
+    summary: 'Kurumların iletişim kararlarını yayından önce sınayan analiz ve simülasyon araçları.',
   },
 ] as const;
 
@@ -122,10 +180,19 @@ export const process = [
 ] as const;
 
 export const reasons = [
-  {
-    title: 'Kendi ürünümüzü işletiyoruz',
-    summary: 'Yazılımı teslim edip bırakmayı değil, yaşatmayı biliyoruz.',
-  },
   { title: 'Şeffaf süreç', summary: 'Kapsam, takvim ve ilerleme baştan sona açıktır.' },
-  { title: 'Uzun vadeli bakım', summary: 'Yayın sonrası destek ve geliştirme işin parçasıdır.' },
+  {
+    title: 'Güvenlik ve gizlilik baştan',
+    summary:
+      'Kişisel verilerin korunmasını ve erişim güvenliğini sonradan değil, tasarım aşamasında ele alırız.',
+  },
+  {
+    title: 'Büyümeye hazır mimari',
+    summary: 'Sistemleri, kullanıcı ve veri arttıkça yeniden yazılmadan genişleyebilecek biçimde kurarız.',
+  },
+  {
+    title: 'Uzun vadeli bakım',
+    summary:
+      'Yayın sonrası destek ve geliştirme işin parçasıdır; kendi platformlarımızı da yayında tutarak bu işin ne gerektirdiğini biliriz.',
+  },
 ] as const;
