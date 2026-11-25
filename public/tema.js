@@ -1,9 +1,8 @@
 // Koyu / acik tema. <head> icinde, sayfa cizilmeden once calisir (yanip sonme olmasin diye).
-// Kayitli secim varsa o, yoksa cihazin ayari gecerlidir. Secim yalniz bu tarayicida saklanir.
+// Site ilk giriste koyu temada acilir; dugmeyle acik temaya gecilir ve secim yalniz bu tarayicida saklanir.
 (function () {
   var KEY = 'kb-tema';
   var root = document.documentElement;
-  var media = window.matchMedia ? window.matchMedia('(prefers-color-scheme: dark)') : null;
   var switchTimer = 0;
 
   function stored() {
@@ -13,10 +12,6 @@
     } catch (e) {
       return null;
     }
-  }
-
-  function system() {
-    return media && media.matches ? 'dark' : 'light';
   }
 
   function syncButtons(theme) {
@@ -34,14 +29,7 @@
   }
 
   root.classList.add('js');
-  apply(stored() || system());
-
-  // Kayitli secim yokken cihazin ayari degisirse site de degisir.
-  if (media && media.addEventListener) {
-    media.addEventListener('change', function () {
-      if (!stored()) apply(system());
-    });
-  }
+  apply(stored() || 'dark');
 
   document.addEventListener('DOMContentLoaded', function () {
     syncButtons(root.getAttribute('data-theme'));

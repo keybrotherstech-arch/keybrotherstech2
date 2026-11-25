@@ -1,0 +1,25 @@
+---
+// Calistigimiz alanlar: ustte kamu ve ozel sektor, altta yetkinlik alanlari.
+import { sectors } from '../data/site';
+
+const main = sectors.filter((s) => 'main' in s && s.main);
+const areas = sectors.filter((s) => !('main' in s && s.main));
+---
+<div class="sectors">
+  <div class="sectors__main" data-reveal-group="110">
+    {main.map((s) => (
+      <article class="sector sector--main" data-reveal>
+        <h3>{s.title}</h3>
+        <p>{s.summary}</p>
+      </article>
+    ))}
+  </div>
+  <div class="sectors__proof" data-reveal-group="110">
+    {areas.map((s) => (
+      <article class="sector" data-reveal>
+        <h3>{s.title}</h3>
+        <p>{s.summary}</p>
+      </article>
+    ))}
+  </div>
+</div>

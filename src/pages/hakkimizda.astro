@@ -2,60 +2,51 @@
 import BaseLayout from '../layouts/BaseLayout.astro';
 import PageHeader from '../components/PageHeader.astro';
 import ContactBand from '../components/ContactBand.astro';
-import { site, products, reasons } from '../data/site';
+import { site, reasons } from '../data/site';
 ---
 <BaseLayout
   title="Hakkımızda | KeyBrothers Teknoloji"
-  description={site.description}
+  description="KeyBrothers Teknoloji, Ankara merkezli yazılım ve yapay zeka şirketidir. Çalışma ilkelerimiz ve şirket bilgilerimiz."
   path="/hakkimizda"
 >
   <main id="icerik">
     <PageHeader
       eyebrow="Hakkımızda"
-      title="Kendi ürününü geliştiren yazılım şirketi."
-      lead="KeyBrothers Teknoloji, Ankara merkezli bir yazılım şirketidir. Hukuk platformu AyLex’i, Meclis takip platformu Vekilin’i ve tepki simülasyonu PromptTurk’ü geliştirir; aynı ürün disipliniyle kamu ve özel sektör kurumlarına yazılım ve yapay zeka çözümleri üretir."
+      title="Teknolojiyi kurumların işine yarayan sistemlere dönüştürüyoruz."
+      lead="KeyBrothers Teknoloji, Ankara merkezli bir yazılım ve yapay zeka şirketidir. Kamu kurumları ve şirketler için ihtiyaca özel yazılım ve yapay zeka çözümleri geliştirir ve teslim ettiği sistemlerin bakımını üstlenir."
     />
 
     <section class="section section--after-header">
       <div class="wrap why">
-        <h2 data-reveal>Neden biz</h2>
-        <div class="reasons" data-reveal-group="100">
+        <h2 data-reveal>Şirket bilgileri</h2>
+        <dl class="company" data-reveal>
+          <div><dt>Unvan</dt><dd>{site.legalName}</dd></div>
+          <div><dt>Merkez</dt><dd>{site.address.oneLine}</dd></div>
+          <div><dt>Resmi yazışma (KEP)</dt><dd>{site.registry.kep}</dd></div>
+          <div><dt>MERSİS</dt><dd>{site.registry.mersis}</dd></div>
+          <div><dt>Ticaret sicil</dt><dd>{site.registry.tradeRegistry}</dd></div>
+          <div><dt>E-posta</dt><dd><a href={`mailto:${site.email}`}>{site.email}</a></dd></div>
+          <div><dt>Telefon</dt><dd><a href={site.phone.href}>{site.phone.display}</a></dd></div>
+        </dl>
+      </div>
+    </section>
+
+    <section class="section section--ink">
+      <div class="wrap">
+        <div class="section__heading section__heading--lead" data-reveal>
+          <div>
+            <p class="eyebrow">İlkelerimiz</p>
+            <h2>Teslim edip bırakmıyoruz.</h2>
+          </div>
+        </div>
+        <div class="principles" data-reveal-group="100">
           {reasons.map((r) => (
-            <article class="reason" data-reveal>
+            <article class="principle" data-reveal>
               <h3>{r.title}</h3>
               <p>{r.summary}</p>
             </article>
           ))}
         </div>
-      </div>
-    </section>
-
-    <section class="section section--subtle">
-      <div class="wrap why">
-        <h2 data-reveal>Ürünlerimiz</h2>
-        <div class="reasons" data-reveal-group="100">
-          {products.map((p) => (
-            <article class="reason reason--link" data-reveal>
-              <h3><a href={`/${p.key}`}>{p.name}</a></h3>
-              <p>{p.category} · {p.title}</p>
-            </article>
-          ))}
-        </div>
-      </div>
-    </section>
-
-    <section class="section">
-      <div class="wrap why">
-        <h2 data-reveal>Şirket bilgileri</h2>
-        <dl class="company" data-reveal>
-          <div><dt>Unvan</dt><dd>{site.legalName}</dd></div>
-          <div><dt>Adres</dt><dd>{site.address.oneLine}</dd></div>
-          <div><dt>MERSİS</dt><dd>{site.registry.mersis}</dd></div>
-          <div><dt>Ticaret sicil</dt><dd>{site.registry.tradeRegistry}</dd></div>
-          <div><dt>KEP</dt><dd>{site.registry.kep}</dd></div>
-          <div><dt>E-posta</dt><dd><a href={`mailto:${site.email}`}>{site.email}</a></dd></div>
-          <div><dt>Telefon</dt><dd><a href={site.phone.href}>{site.phone.display}</a></dd></div>
-        </dl>
       </div>
     </section>
 

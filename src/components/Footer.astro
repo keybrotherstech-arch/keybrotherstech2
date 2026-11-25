@@ -1,7 +1,7 @@
 ---
 // Alt bilgi ve kunye. Butun sayfalarda ayni dosya kullanilir.
 import Brand from './Brand.astro';
-import { site, products } from '../data/site';
+import { site, products, services } from '../data/site';
 ---
 <footer class="site-footer">
   <div class="wrap">
@@ -9,6 +9,7 @@ import { site, products } from '../data/site';
     <div class="site-footer__grid">
       <div class="site-footer__company">
         <Brand label="KeyBrothers Teknoloji, ana sayfa" />
+        <p class="site-footer__tagline">{site.tagline}.</p>
         <p class="site-footer__legal-name">{site.legalName}</p>
         <address>
           {site.address.oneLine}<br />
@@ -23,6 +24,12 @@ import { site, products } from '../data/site';
 
       <nav class="site-footer__links" aria-label="Alt bilgi bağlantıları">
         <div>
+          <p class="site-footer__heading">Hizmetler</p>
+          <ul>
+            {services.map((s) => <li><a href={`/hizmetler#${s.slug}`}>{s.title}</a></li>)}
+          </ul>
+        </div>
+        <div>
           <p class="site-footer__heading">Ürünler</p>
           <ul>
             {products.map((p) => <li><a href={`/${p.key}`}>{p.name}</a></li>)}
@@ -31,20 +38,14 @@ import { site, products } from '../data/site';
         <div>
           <p class="site-footer__heading">Şirket</p>
           <ul>
-            <li><a href="/hizmetler">Hizmetler</a></li>
             <li><a href="/hakkimizda">Hakkımızda</a></li>
             <li><a href="/iletisim">İletişim</a></li>
-          </ul>
-        </div>
-        <div>
-          <p class="site-footer__heading">Yasal</p>
-          <ul>
             <li><a href="/kvkk-aydinlatma-metni">KVKK Aydınlatma Metni</a></li>
             <li><a href="/gizlilik-politikasi">Gizlilik ve Çerez Politikası</a></li>
           </ul>
         </div>
       </nav>
     </div>
-    <p class="site-footer__bottom">© 2026 {site.name}</p>
+    <p class="site-footer__bottom">© 2026 {site.legalName}</p>
   </div>
 </footer>

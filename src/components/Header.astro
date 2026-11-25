@@ -1,7 +1,8 @@
 ---
-// Ust menu. Butun sayfalarda ayni dosya kullanilir.
+// Ust bilgi seridi ve ust menu. Butun sayfalarda ayni dosya kullanilir.
+// Serit sayfayla birlikte kayar; menu ustte sabit kalir.
 import Brand from './Brand.astro';
-import { nav, products } from '../data/site';
+import { site, nav, products } from '../data/site';
 
 // Bulunulan sayfa menude isaretlenir; urun sayfalari "Urunler" altinda sayilir.
 const path = Astro.url.pathname.replace(/\/$/, '') || '/';
@@ -9,6 +10,15 @@ const productPaths = products.map((p) => `/${p.key}`);
 const isCurrent = (href: string) =>
   path === href || (href === '/urunler' && productPaths.includes(path));
 ---
+<aside class="topbar" aria-label="İletişim bilgileri">
+  <div class="wrap topbar__inner">
+    <p class="topbar__tagline">{site.address.city} · MTC Plaza, {site.address.district}</p>
+    <p class="topbar__contact">
+      <a href={site.phone.href}>{site.phone.display}</a>
+      <a href={`mailto:${site.email}`}>{site.email}</a>
+    </p>
+  </div>
+</aside>
 <header class="site-header">
   <div class="wrap site-header__inner">
     <Brand label="KeyBrothers Teknoloji, ana sayfa" />
