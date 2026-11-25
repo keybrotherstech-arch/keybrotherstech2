@@ -516,8 +516,9 @@ address {
 }
 
 /* Urun renkleri: urun blogu, urun karti ve ayrintili urun sayfasi ayni degiskenleri kullanir */
+/* AyLex: kendi sitesi gibi siyah-beyaz (acik temada koyu, koyu temada beyaz vurgu) */
 [data-product] {
-  --product-accent: #3e5c76;
+  --product-accent: #1d2329;
   --product-tint: #edf2f5;
 }
 
@@ -533,7 +534,7 @@ address {
 }
 
 :root[data-theme='dark'] [data-product] {
-  --product-accent: #8fb0cd;
+  --product-accent: #f4f5f5;
   --product-tint: #1e252b;
 }
 
